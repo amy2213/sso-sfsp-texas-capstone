@@ -1,0 +1,179 @@
+dataset_key,column_name,sample_value,null_pct,dtype_inferred
+2019_meal_counts_ckuq-8u2b,programyear,2018-2019,0.0,str
+2019_meal_counts_ckuq-8u2b,reporttype,SUMMERSSOCLAIMS,0.0,str
+2019_meal_counts_ckuq-8u2b,ceid,00003,0.0,str
+2019_meal_counts_ckuq-8u2b,cename,FRANKSTON ISD,0.0,str
+2019_meal_counts_ckuq-8u2b,typeofagency,Educational Institution,0.0,str
+2019_meal_counts_ckuq-8u2b,typeoforg,Public,0.0,str
+2019_meal_counts_ckuq-8u2b,esc,7,0.0,str
+2019_meal_counts_ckuq-8u2b,tdaregion,2,0.0,str
+2019_meal_counts_ckuq-8u2b,siteid,0001,0.0,str
+2019_meal_counts_ckuq-8u2b,sitename,FRANKSTON H S,0.0,str
+2019_meal_counts_ckuq-8u2b,countydistrictcode,001-904,0.0,str
+2019_meal_counts_ckuq-8u2b,cecounty,ANDERSON,0.0,str
+2019_meal_counts_ckuq-8u2b,sitecounty,ANDERSON,0.0,str
+2019_meal_counts_ckuq-8u2b,claimdate,2019-06-01T00:00:00.000,0.0,str
+2019_meal_counts_ckuq-8u2b,breakfastdays,20,0.0,str
+2019_meal_counts_ckuq-8u2b,breakfasttotal,1629,0.0,str
+2019_meal_counts_ckuq-8u2b,breakfastadp,81.45,0.0,str
+2019_meal_counts_ckuq-8u2b,amsnackdays,0,0.0,str
+2019_meal_counts_ckuq-8u2b,amsnacktotal,0,0.0,str
+2019_meal_counts_ckuq-8u2b,amsnackadp,0,0.0,str
+2019_meal_counts_ckuq-8u2b,lunchdays,20,0.0,str
+2019_meal_counts_ckuq-8u2b,lunchtotal,1556,0.0,str
+2019_meal_counts_ckuq-8u2b,lunchadp,77.8,0.0,str
+2019_meal_counts_ckuq-8u2b,pmsnackdays,0,0.0,str
+2019_meal_counts_ckuq-8u2b,pmsnacktotal,0,0.0,str
+2019_meal_counts_ckuq-8u2b,pmsnackadp,0,0.0,str
+2019_meal_counts_ckuq-8u2b,supperdays,0,0.0,str
+2019_meal_counts_ckuq-8u2b,suppertotal,0,0.0,str
+2019_meal_counts_ckuq-8u2b,supperadp,0,0.0,str
+2022_meal_counts_m23c-22mm,programyear,2021-2022,0.0,str
+2022_meal_counts_m23c-22mm,reporttype,SUMMERSSOCLAIMS,0.0,str
+2022_meal_counts_m23c-22mm,ceid,00001,0.0,str
+2022_meal_counts_m23c-22mm,cename,CAYUGA ISD,0.0,str
+2022_meal_counts_m23c-22mm,typeofagency,Educational Institution,0.0,str
+2022_meal_counts_m23c-22mm,typeoforg,Public,0.0,str
+2022_meal_counts_m23c-22mm,esc,7,0.0,str
+2022_meal_counts_m23c-22mm,tdaregion,2,0.0,str
+2022_meal_counts_m23c-22mm,siteid,0001,0.0,str
+2022_meal_counts_m23c-22mm,sitename,CAYUGA H S,0.0,str
+2022_meal_counts_m23c-22mm,countydistrictcode,001-902,0.06,str
+2022_meal_counts_m23c-22mm,cecounty,ANDERSON,0.0,str
+2022_meal_counts_m23c-22mm,sitecounty,ANDERSON,0.0,str
+2022_meal_counts_m23c-22mm,claimdate,2021-10-01T00:00:00.000,0.0,str
+2022_meal_counts_m23c-22mm,breakfastdays,20,0.0,str
+2022_meal_counts_m23c-22mm,breakfasttotal,1421,0.0,str
+2022_meal_counts_m23c-22mm,breakfastadp,71.05,0.0,str
+2022_meal_counts_m23c-22mm,amsnackdays,0,0.0,str
+2022_meal_counts_m23c-22mm,amsnacktotal,0,0.0,str
+2022_meal_counts_m23c-22mm,amsnackadp,0,0.0,str
+2022_meal_counts_m23c-22mm,lunchdays,20,0.0,str
+2022_meal_counts_m23c-22mm,lunchtotal,1885,0.0,str
+2022_meal_counts_m23c-22mm,lunchadp,94.25,0.0,str
+2022_meal_counts_m23c-22mm,pmsnackdays,0,0.0,str
+2022_meal_counts_m23c-22mm,pmsnacktotal,0,0.0,str
+2022_meal_counts_m23c-22mm,pmsnackadp,0,0.0,str
+2022_meal_counts_m23c-22mm,supperdays,0,0.0,str
+2022_meal_counts_m23c-22mm,suppertotal,0,0.0,str
+2022_meal_counts_m23c-22mm,supperadp,0,0.0,str
+2018_meal_counts_pxzu-afsv,cesiteid,00011-0001,0.0,str
+2018_meal_counts_pxzu-afsv,programyear,2017-2018,0.0,str
+2018_meal_counts_pxzu-afsv,program,SUMMER_FOOD_SERVICE_PROG_MEALS,0.0,str
+2018_meal_counts_pxzu-afsv,ceid,00011,0.0,str
+2018_meal_counts_pxzu-afsv,cename,LUFKIN ISD,0.0,str
+2018_meal_counts_pxzu-afsv,typeofagency,Educational Institution,0.0,str
+2018_meal_counts_pxzu-afsv,typeoforg,School Food Authority,0.0,str
+2018_meal_counts_pxzu-afsv,esc,7,0.0,str
+2018_meal_counts_pxzu-afsv,tdaregion,3,0.0,str
+2018_meal_counts_pxzu-afsv,siteid,0001,0.0,str
+2018_meal_counts_pxzu-afsv,sitename,LUFKIN H S,0.0,str
+2018_meal_counts_pxzu-afsv,cecounty,ANGELINA,0.0,str
+2018_meal_counts_pxzu-afsv,sitecounty,ANGELINA,0.0,str
+2018_meal_counts_pxzu-afsv,claimdate,2018-06-01T00:00:00.000,0.0,str
+2018_meal_counts_pxzu-afsv,breakfastdays,19,0.0,str
+2018_meal_counts_pxzu-afsv,breakfast,1663,0.0,str
+2018_meal_counts_pxzu-afsv,secondbreakfast,0,31.57,str
+2018_meal_counts_pxzu-afsv,breakfasttotal,1663,0.0,str
+2018_meal_counts_pxzu-afsv,amsnackdays,0,0.0,str
+2018_meal_counts_pxzu-afsv,amsnack,0,0.0,str
+2018_meal_counts_pxzu-afsv,secondamsnack,0,31.57,str
+2018_meal_counts_pxzu-afsv,amsnacktotal,0,0.0,str
+2018_meal_counts_pxzu-afsv,lunchdays,19,0.0,str
+2018_meal_counts_pxzu-afsv,lunch,6358,0.0,str
+2018_meal_counts_pxzu-afsv,secondlunch,0,31.57,str
+2018_meal_counts_pxzu-afsv,lunchtotal,6358,0.0,str
+2018_meal_counts_pxzu-afsv,pmsnackdays,0,0.0,str
+2018_meal_counts_pxzu-afsv,pmsnack,0,0.0,str
+2018_meal_counts_pxzu-afsv,secondpmsnack,0,31.57,str
+2018_meal_counts_pxzu-afsv,pmsnacktotal,0,0.0,str
+2018_meal_counts_pxzu-afsv,supperdays,0,0.0,str
+2018_meal_counts_pxzu-afsv,supper,0,0.0,str
+2018_meal_counts_pxzu-afsv,secondsupper,0,31.57,str
+2018_meal_counts_pxzu-afsv,suppertotal,0,0.0,str
+2018_meal_counts_pxzu-afsv,totalsnacks,0,0.0,str
+2018_meal_counts_pxzu-afsv,totalmeals_snacks,8021,0.0,str
+2024_meal_counts_4axx-sfpm,odprecid,00003-0001,0.0,str
+2024_meal_counts_4axx-sfpm,programyear,2024,0.0,str
+2024_meal_counts_4axx-sfpm,program,SEAMLESS_SUMMER_OPTION_MEALS,0.0,str
+2024_meal_counts_4axx-sfpm,ceid,00003,0.0,str
+2024_meal_counts_4axx-sfpm,cename,FRANKSTON ISD,0.0,str
+2024_meal_counts_4axx-sfpm,typeofagency,Educational Institution,0.0,str
+2024_meal_counts_4axx-sfpm,typeoforg,Public,0.0,str
+2024_meal_counts_4axx-sfpm,esc,7,0.0,str
+2024_meal_counts_4axx-sfpm,tdaregion,2,0.0,str
+2024_meal_counts_4axx-sfpm,siteid,0001,0.0,str
+2024_meal_counts_4axx-sfpm,sitename,FRANKSTON H S,0.0,str
+2024_meal_counts_4axx-sfpm,countydistrictcode,001-904,18.86,str
+2024_meal_counts_4axx-sfpm,cecounty,ANDERSON,0.0,str
+2024_meal_counts_4axx-sfpm,sitecounty,ANDERSON,0.0,str
+2024_meal_counts_4axx-sfpm,claimdate,2024-06-01T00:00:00.000,0.0,str
+2024_meal_counts_4axx-sfpm,breakfastdays,15,0.0,str
+2024_meal_counts_4axx-sfpm,breakfast,410,0.0,str
+2024_meal_counts_4axx-sfpm,breakfasttotal,410,0.0,str
+2024_meal_counts_4axx-sfpm,amsnackdays,0,0.0,str
+2024_meal_counts_4axx-sfpm,amsnack,0,0.0,str
+2024_meal_counts_4axx-sfpm,amsnacktotal,0,0.0,str
+2024_meal_counts_4axx-sfpm,lunchdays,15,0.0,str
+2024_meal_counts_4axx-sfpm,lunch,261,0.0,str
+2024_meal_counts_4axx-sfpm,lunchtotal,261,0.0,str
+2024_meal_counts_4axx-sfpm,pmsnackdays,0,0.0,str
+2024_meal_counts_4axx-sfpm,pmsnack,0,0.0,str
+2024_meal_counts_4axx-sfpm,pmsnacktotal,0,0.0,str
+2024_meal_counts_4axx-sfpm,supperdays,0,0.0,str
+2024_meal_counts_4axx-sfpm,supper,0,0.0,str
+2024_meal_counts_4axx-sfpm,suppertotal,0,0.0,str
+2024_meal_counts_4axx-sfpm,totalsnacks,0,0.0,str
+2024_meal_counts_4axx-sfpm,totalmealssnacks,671,0.0,str
+2024_meal_counts_4axx-sfpm,secondbreakfast,0,55.04,str
+2024_meal_counts_4axx-sfpm,secondamsnack,0,55.04,str
+2024_meal_counts_4axx-sfpm,secondlunch,0,55.04,str
+2024_meal_counts_4axx-sfpm,secondpmsnack,0,55.04,str
+2024_meal_counts_4axx-sfpm,secondsupper,0,55.04,str
+2019_reimbursements_rbdj-agw7,programyear,2018-2019,0.0,str
+2019_reimbursements_rbdj-agw7,reporttype,SUMMERSSOCEREIMBURSEMENTS,0.0,str
+2019_reimbursements_rbdj-agw7,ceid,00003,0.0,str
+2019_reimbursements_rbdj-agw7,cename,FRANKSTON ISD,0.0,str
+2019_reimbursements_rbdj-agw7,typeofagency,Educational Institution,0.0,str
+2019_reimbursements_rbdj-agw7,typeoforg,Public,0.0,str
+2019_reimbursements_rbdj-agw7,esc,7,0.0,str
+2019_reimbursements_rbdj-agw7,tdaregion,2,0.0,str
+2019_reimbursements_rbdj-agw7,countydistrictcode,001-904,0.0,str
+2019_reimbursements_rbdj-agw7,cecounty,ANDERSON,0.0,str
+2019_reimbursements_rbdj-agw7,sitecount,2,0.0,str
+2019_reimbursements_rbdj-agw7,claimdate,2019-06-01T00:00:00.000,0.0,str
+2019_reimbursements_rbdj-agw7,breakfastmealsreimbursed,1629,0.0,str
+2019_reimbursements_rbdj-agw7,amsnackmealsreimbursed,0,0.0,str
+2019_reimbursements_rbdj-agw7,lunchmealsreimbursed,2384,0.0,str
+2019_reimbursements_rbdj-agw7,pmsnackmealsreimbursed,0,0.0,str
+2019_reimbursements_rbdj-agw7,suppermealsreimbursed,0,0.0,str
+2019_reimbursements_rbdj-agw7,breakfastreimbursement,3486.0600,0.0,str
+2019_reimbursements_rbdj-agw7,amsnackreimbursement,0,0.0,str
+2019_reimbursements_rbdj-agw7,lunchreimbursement,8081.7600,0.0,str
+2019_reimbursements_rbdj-agw7,pmsnackreimbursement,0,0.0,str
+2019_reimbursements_rbdj-agw7,supperreimbursement,0,0.0,str
+2019_reimbursements_rbdj-agw7,totalreimbursement,11567.8200,0.0,str
+2022_reimbursements_ti35-mz6c,programyear,2021-2022,0.0,str
+2022_reimbursements_ti35-mz6c,reporttype,SUMMERSSOCEREIMBURSEMENTS,0.0,str
+2022_reimbursements_ti35-mz6c,ceid,00169,0.0,str
+2022_reimbursements_ti35-mz6c,cename,QUEEN CITY ISD,0.0,str
+2022_reimbursements_ti35-mz6c,typeofagency,Educational Institution,0.0,str
+2022_reimbursements_ti35-mz6c,typeoforg,Public,0.0,str
+2022_reimbursements_ti35-mz6c,esc,8,0.0,str
+2022_reimbursements_ti35-mz6c,tdaregion,2,0.0,str
+2022_reimbursements_ti35-mz6c,countydistrictcode,034-907,0.26,str
+2022_reimbursements_ti35-mz6c,cecounty,CASS,0.0,str
+2022_reimbursements_ti35-mz6c,sitecount,3,0.0,str
+2022_reimbursements_ti35-mz6c,regularmealsitecount,3,0.0,str
+2022_reimbursements_ti35-mz6c,claimdate,2021-12-01T00:00:00.000,0.0,str
+2022_reimbursements_ti35-mz6c,breakfastmealsreimbursed,5325,0.0,str
+2022_reimbursements_ti35-mz6c,amsnackmealsreimbursed,0,0.0,str
+2022_reimbursements_ti35-mz6c,lunchmealsreimbursed,6823,0.0,str
+2022_reimbursements_ti35-mz6c,pmsnackmealsreimbursed,0,0.0,str
+2022_reimbursements_ti35-mz6c,suppermealsreimbursed,0,0.0,str
+2022_reimbursements_ti35-mz6c,breakfastreimbursement,11928,0.0,str
+2022_reimbursements_ti35-mz6c,amsnackreimbursement,0,0.0,str
+2022_reimbursements_ti35-mz6c,lunchreimbursement,26677.93,0.0,str
+2022_reimbursements_ti35-mz6c,pmsnackreimbursement,0,0.0,str
+2022_reimbursements_ti35-mz6c,supperreimbursement,0,0.0,str
+2022_reimbursements_ti35-mz6c,totalreimbursement,38605.93,0.0,str

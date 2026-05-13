@@ -1,0 +1,7 @@
+table_name,source_dataset,year,row_count,missing_ce_id,missing_site_id,missing_county,missing_total_meals,duplicate_match_keys,negative_total_meals,unknown_program_type,created_at,missing_ce_name,missing_reimbursement_amount,zero_total_meals,suspicious_reimbursement_per_meal_over_20,negative_reimbursement_amount
+summer_meals_master,All Summer Sites Meal Count 2024,2024,8726,0,0.0,0.0,0,0.0,0.0,0.0,2026-05-12T19:02:54,,,,,
+summer_meals_master,SFSP + SSO Meal Counts 2018,2018,11893,0,0.0,0.0,0,0.0,0.0,0.0,2026-05-12T19:02:54,,,,,
+summer_meals_master,SSO Meal Counts 2019,2019,4317,0,0.0,0.0,0,0.0,0.0,0.0,2026-05-12T19:02:54,,,,,
+summer_meals_master,SSO Meal Counts 2021-2022,2022,70817,0,0.0,0.0,0,0.0,0.0,0.0,2026-05-12T19:02:54,,,,,
+reimbursements_master,SSO Reimbursements 2019,2019,738,0,,,0,,,,2026-05-12T19:02:54,0.0,0.0,0.0,0.0,0.0
+reimbursements_master,SSO Reimbursements 2021-2022,2022,9500,0,,,0,,,,2026-05-12T19:02:54,0.0,0.0,0.0,0.0,0.0
