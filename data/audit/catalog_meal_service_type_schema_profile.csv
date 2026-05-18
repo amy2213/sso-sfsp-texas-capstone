@@ -1,0 +1,243 @@
+dataset_id,column_name,sample_value,null_pct
+24ie-9cft,odprecid,00298-0112,0.0
+24ie-9cft,programyear,2022-2023,0.0
+24ie-9cft,reporttype,AllSummerSitesContacts,0.0
+24ie-9cft,program,SFSP,0.0
+24ie-9cft,ceid,00298,0.0
+24ie-9cft,cename,PILOT POINT ISD,0.0
+24ie-9cft,typeofagency,Educational Institution,0.0
+24ie-9cft,typeoforg,School Food Authority,0.0
+24ie-9cft,esc,11,0.0
+24ie-9cft,tdaregion,2,0.0
+24ie-9cft,cestatus,Active,0.0
+24ie-9cft,ceapplicationcycle,RENEWAL,0.0
+24ie-9cft,siteid,0112,0.0
+24ie-9cft,sitename,St. Thomas Aquinas Catholic Church,0.0
+24ie-9cft,sitestatus,ACTIVE,0.0
+24ie-9cft,countydistrictcode,061-903,13.91
+24ie-9cft,cecounty,DENTON,0.0
+24ie-9cft,sitecounty,DENTON,0.0
+24ie-9cft,cestreetaddressline1,829 S. Harrison St,0.0
+24ie-9cft,cestreetaddressline2,Child Nutrition,88.75
+24ie-9cft,cestreetaddresscity,Pilot Point,0.0
+24ie-9cft,cestreetaddressstate,TX,0.0
+24ie-9cft,cestreetaddresszipcode,76258,0.0
+24ie-9cft,cemailingaddressline1,829 S. Harrison St,0.0
+24ie-9cft,cemailingaddressline2,Child Nutrition,88.69
+24ie-9cft,cemailingaddresscity,Pilot Point,0.0
+24ie-9cft,cemailingaddressstate,TX,0.0
+24ie-9cft,cemailingaddresszipcode,76258,0.0
+24ie-9cft,sitestreetaddressline1,400 St. Thomas Aquinas Ave.,0.0
+24ie-9cft,sitestreetaddresscity,Pilot Point,0.0
+24ie-9cft,sitestreetaddressstate,TX,0.0
+24ie-9cft,sitestreetaddresszipcode,76258,0.0
+24ie-9cft,progradministratorsalutation,Ms.,7.56
+24ie-9cft,progradministratorfirstname,Karen,0.0
+24ie-9cft,progradministratorlastname,Quiroz,0.0
+24ie-9cft,progradministratortitlep,Program Director of Child Nutrition,0.0
+24ie-9cft,progradministratoremail,kquiroz@pilotpointisd.com,0.0
+24ie-9cft,progradministratorphone,9406868710,0.0
+24ie-9cft,progrcoordinatorsalutation,Ms.,18.85
+24ie-9cft,progrcoordinatorfirstname,Karen.,0.0
+24ie-9cft,progrcoordinatorlastname,Quiroz,0.0
+24ie-9cft,progrcoordinatortitleposition,Program Director of Child Nutrition,0.0
+24ie-9cft,progrcoordinatoremail,kquiroz@pilotpointisd.com,0.0
+24ie-9cft,progrcoordinatorphone,9406868710,0.0
+24ie-9cft,sitecontactsalutation,Ms.,37.91
+24ie-9cft,sitecontactfirstname,Karen,0.0
+24ie-9cft,sitecontactlastname,Quiroz,0.0
+24ie-9cft,sitecontacttitleposition,Program Director of Child Nutrition,0.0
+24ie-9cft,sitecontactemail,kquiroz@pilotpointisd.com,8.17
+24ie-9cft,sitecontactphone,9406868710,0.0
+24ie-9cft,sitetype,Open,0.0
+24ie-9cft,sitestartdate,2023-05-22T00:00:00.000,0.0
+24ie-9cft,siteenddate,2023-06-29T00:00:00.000,0.0
+24ie-9cft,daysofoperation,"M,T,W,TH",0.0
+24ie-9cft,mealservicetype,Congregate,0.0
+24ie-9cft,mealtypesserved,"Breakfast, Lunch",0.0
+24ie-9cft,breakfasttime,7:30 - 8:30,21.75
+24ie-9cft,breakfastdaysserved,"M, T, W, TH",21.75
+24ie-9cft,lunchtime,11:00 - 12:00,3.2
+24ie-9cft,lunchdaysserved,"M, T, W, TH",3.2
+24ie-9cft,operationstartdate,2023-05-22T00:00:00.000,0.0
+24ie-9cft,operationenddate,2023-06-29T00:00:00.000,0.0
+24ie-9cft,geolocation,"{'type': 'Point', 'coordinates': [-96.954226977, 33.404275008]}",0.02
+24ie-9cft,computed_region_ptpy_sh92,106,0.06
+24ie-9cft,computed_region_59h5_km5p,231,0.09
+24ie-9cft,computed_region_de3d_j5mj,16,0.08
+24ie-9cft,computed_region_ji3u_dqif,26,0.04
+24ie-9cft,computed_region_rk7b_wvzt,30,0.04
+24ie-9cft,pmsnacktime,15:00 - 16:00,90.81
+24ie-9cft,pmsnackdaysserved,"M, T, W, TH, F",90.81
+24ie-9cft,sitestreetaddressline2,P.O. Box 1117,92.76
+24ie-9cft,siteterminationstatus,Self Cancelled,95.68
+24ie-9cft,siteterminatedasofdate,2023-05-29T00:00:00.000,95.68
+24ie-9cft,suppertime,14:00 - 16:00,98.16
+24ie-9cft,supperdaysserved,M,98.16
+24ie-9cft,amsnacktime,7:00 - 9:00,99.11
+24ie-9cft,amsnackdaysserved,"M, T, W, TH, F",99.11
+24ie-9cft,ceterminationstatus,Self Cancelled,99.98
+24ie-9cft,ceterminatedasofdate,2023-06-30T00:00:00.000,99.98
+82b8-iuvu,odprecid,00045-0104,0.0
+82b8-iuvu,programyear,2022-2023,0.0
+82b8-iuvu,reporttype,SSOCONTACTS,0.0
+82b8-iuvu,ceid,00045,0.0
+82b8-iuvu,cename,BELTON ISD,0.0
+82b8-iuvu,typeofagency,Educational Institution,0.0
+82b8-iuvu,typeoforg,Public,0.0
+82b8-iuvu,esc,12,0.0
+82b8-iuvu,tdaregion,2,0.0
+82b8-iuvu,cestatus,Active,0.0
+82b8-iuvu,ceapplicationcycle,RENEWAL,0.0
+82b8-iuvu,siteid,0104,0.0
+82b8-iuvu,sitename,SOUTHWEST EL,0.0
+82b8-iuvu,sitestatus,Active,0.0
+82b8-iuvu,siteapplicationcycle,RENEWAL,0.0
+82b8-iuvu,countydistrictcode,014-903,0.03
+82b8-iuvu,cecounty,BELL,0.0
+82b8-iuvu,sitecounty,BELL,0.0
+82b8-iuvu,cestreetaddressline1,400 N WALL,0.0
+82b8-iuvu,cestreetaddresscity,BELTON,0.0
+82b8-iuvu,cestreetaddressstate,TX,0.0
+82b8-iuvu,cestreetaddresszipcode,76513-0269,0.0
+82b8-iuvu,cemailingaddressline1,P O BOX 269,0.0
+82b8-iuvu,cemailingaddresscity,BELTON,0.0
+82b8-iuvu,cemailingaddressstate,TX,0.0
+82b8-iuvu,cemailingaddresszipcode,76513-0269,0.0
+82b8-iuvu,sitestreetaddressline1,611 S SAUNDERS,0.0
+82b8-iuvu,sitestreetaddresscity,BELTON,0.0
+82b8-iuvu,sitestreetaddressstate,TX,0.0
+82b8-iuvu,sitestreetaddresszipcode,76513,0.0
+82b8-iuvu,superintendentsalutation,Dr.,0.2
+82b8-iuvu,superintendentfirstname,Matt,0.0
+82b8-iuvu,superintendentlastname,Smith,0.0
+82b8-iuvu,superintendenttitleposition,Superintendent,0.0
+82b8-iuvu,superintendentemail,matt.smith@bisd.net,0.0
+82b8-iuvu,superintendentphone,2542152000,0.0
+82b8-iuvu,childnutdirsalutation,Mr.,2.42
+82b8-iuvu,childnutdirfirstname,Chris,0.0
+82b8-iuvu,childnutdirlastname,Teager,0.0
+82b8-iuvu,childnutdirtitleposition,School Nutrition Director,0.0
+82b8-iuvu,childnutdiremail,chris.teager@bisd.net,0.0
+82b8-iuvu,childnutdirphone,2542152191,0.0
+82b8-iuvu,seamlesssummercontactsalutation,Mrs.,30.13
+82b8-iuvu,seamlesssummercontactfirstname,Kristi,0.0
+82b8-iuvu,seamlesssummercontactlastname,Rogers,0.0
+82b8-iuvu,seamlesssummercontacttitleposition,Nutrition Manager,0.0
+82b8-iuvu,seamlesssummercontactemail,kristi.rogers@bisd.net,0.0
+82b8-iuvu,seamlesssummercontactphone,2542153510,0.0
+82b8-iuvu,sitetype,Open,0.0
+82b8-iuvu,sitestartdate,2023-05-30T00:00:00.000,0.0
+82b8-iuvu,siteenddate,2023-07-28T00:00:00.000,0.0
+82b8-iuvu,daysofoperation,"M,T,W,TH,F",0.0
+82b8-iuvu,mealservicetype,Congregate,0.0
+82b8-iuvu,mealtypesserved,Lunch,0.0
+82b8-iuvu,lunchtime,11:30 AM - 12:30 PM,2.42
+82b8-iuvu,lunchdaysserved,"M, T, W, TH, F",2.42
+82b8-iuvu,geolocation,"{'type': 'Point', 'coordinates': [-97.471492997, 31.052617995]}",0.0
+82b8-iuvu,computed_region_ptpy_sh92,55,0.03
+82b8-iuvu,computed_region_59h5_km5p,120,0.1
+82b8-iuvu,computed_region_de3d_j5mj,16,0.1
+82b8-iuvu,computed_region_ji3u_dqif,31,0.0
+82b8-iuvu,computed_region_rk7b_wvzt,24,0.0
+82b8-iuvu,breakfasttime,7:30 AM - 8:30 AM,8.54
+82b8-iuvu,breakfastdaysserved,"M, T, W, TH",8.54
+82b8-iuvu,cestreetaddressline2,Central Office - Child Nutrition,98.35
+82b8-iuvu,cemailingaddressline2,Service Center - Child Nutrition,97.88
+82b8-iuvu,siteterminationstatus,TDA Cancelled,98.96
+82b8-iuvu,siteterminatedasofdate,2023-05-26T00:00:00.000,98.96
+82b8-iuvu,sitestreetaddressline2,Ministerio Apostolico,96.6
+82b8-iuvu,amsnacktime,11:00 AM - 11:30 AM,99.39
+82b8-iuvu,amsnackdaysserved,"M, T, W, TH",99.39
+82b8-iuvu,suppertime,2:50 PM - 5:00 PM,99.6
+82b8-iuvu,supperdaysserved,"M, T, W, TH",99.6
+82b8-iuvu,pmsnacktime,3:00 PM - 3:30 PM,99.13
+82b8-iuvu,pmsnackdaysserved,"T, W, TH, F",99.13
+82b8-iuvu,ceterminationstatus,Self Cancelled,99.97
+82b8-iuvu,ceterminatedasofdate,2023-06-30T00:00:00.000,99.97
+8ih4-zp65,odprecid,06083-0077,0.0
+8ih4-zp65,programyear,2022-2023,0.0
+8ih4-zp65,reporttype,SFSPCONTACTS,0.0
+8ih4-zp65,ceid,06083,0.0
+8ih4-zp65,cename,"""With Helping Hands"" serving nutritious meals",0.0
+8ih4-zp65,typeofagency,Private Non Profit Organization,0.0
+8ih4-zp65,typeoforg,Private Nonprofit,0.0
+8ih4-zp65,esc,4,0.0
+8ih4-zp65,tdaregion,3,0.0
+8ih4-zp65,cestatus,Active,0.0
+8ih4-zp65,ceapplicationcycle,RENEWAL,0.0
+8ih4-zp65,siteid,0077,0.0
+8ih4-zp65,sitename,Almeda Park Apartments,0.0
+8ih4-zp65,covidmealsite,False,0.0
+8ih4-zp65,sitestatus,ACTIVE,0.0
+8ih4-zp65,cecounty,HARRIS,0.0
+8ih4-zp65,sitecounty,HARRIS,0.0
+8ih4-zp65,ruralorurbancode,Urban,0.0
+8ih4-zp65,cestreetaddressline1,12510 Unison Rd.,0.0
+8ih4-zp65,cestreetaddresscity,HOUSTON,0.0
+8ih4-zp65,cestreetaddressstate,TX,0.0
+8ih4-zp65,cestreetaddresszipcode,77044-2324,0.0
+8ih4-zp65,cemailingaddressline1,12510 Unison Rd.,0.0
+8ih4-zp65,cemailingaddresscity,HOUSTON,0.0
+8ih4-zp65,cemailingaddressstate,TX,0.0
+8ih4-zp65,cemailingaddresszipcode,77044-2324,0.0
+8ih4-zp65,sitestreetaddressline1,10950 Tanner Park Ct.,0.0
+8ih4-zp65,sitestreetaddresscity,Houston,0.0
+8ih4-zp65,sitestreetaddressstate,TX,0.0
+8ih4-zp65,sitestreetaddresszipcode,77075,0.0
+8ih4-zp65,sitemailingaddressline1,12510 Unison,0.0
+8ih4-zp65,sitemailingaddresscity,Houston,0.0
+8ih4-zp65,sitemailingaddressstate,TX,0.0
+8ih4-zp65,sitemailingaddresszipcode,77044,0.0
+8ih4-zp65,sfspcontactsalutation,Mrs.,40.06
+8ih4-zp65,sfspcontactfirstname,Jamie,0.0
+8ih4-zp65,sfspcontactlastname,Williams,0.0
+8ih4-zp65,sfspcontacttitleposition,Executive Director,0.0
+8ih4-zp65,sfspcontactemail,withhelpinghands@yahoo.com,0.0
+8ih4-zp65,sfspcontactphone,8325151023,0.0
+8ih4-zp65,authorizedindiv1salutation,Mrs.,17.06
+8ih4-zp65,authorizedindiv1firstname,Jamie,0.0
+8ih4-zp65,authorizedindiv1lastname,Williams,0.0
+8ih4-zp65,authorizedindiv1titleposition,Executive Director,0.0
+8ih4-zp65,authorizedindiv1email,withhelpinghands@yahoo.com,0.0
+8ih4-zp65,authorizedindiv1phone,8325151023,0.0
+8ih4-zp65,sitesupervisorsalutation,Ms.,47.96
+8ih4-zp65,sitesupervisorfirstname,Jennifer,0.0
+8ih4-zp65,sitesupervisorlastname,Borneman,0.0
+8ih4-zp65,sitesupervisortitleposition,Site Supervisor,0.0
+8ih4-zp65,sitesupervisoremail,jborneman@prspurpose.org,18.71
+8ih4-zp65,sitesupervisorphone,8325416317,0.0
+8ih4-zp65,sitetype,Open,0.0
+8ih4-zp65,sitestartdate,2023-06-13T00:00:00.000,0.0
+8ih4-zp65,siteenddate,2023-08-11T00:00:00.000,0.0
+8ih4-zp65,daysofoperation,M,0.0
+8ih4-zp65,mealtypesserved,Dinner,0.0
+8ih4-zp65,suppertime,14:00 - 16:00,96.31
+8ih4-zp65,suppermealservicemethod,Self-Prep - Receives meals (Central Kitchen),96.31
+8ih4-zp65,supperdaysserved,M,96.31
+8ih4-zp65,geolocation,"{'type': 'Point', 'coordinates': [-95.22462704, 29.618983017]}",0.0
+8ih4-zp65,mealservicetype,Congregate,0.0
+8ih4-zp65,computed_region_59h5_km5p,121,0.0
+8ih4-zp65,computed_region_de3d_j5mj,16,0.0
+8ih4-zp65,computed_region_ji3u_dqif,29,0.0
+8ih4-zp65,computed_region_rk7b_wvzt,6,0.0
+8ih4-zp65,computed_region_ptpy_sh92,147,0.0
+8ih4-zp65,lunchtime,12:00 - 14:00,4.21
+8ih4-zp65,lunchmealservicemethod,Self-Prep - Receives meals (Central Kitchen),4.21
+8ih4-zp65,lunchdaysserved,"T, W, TH",4.21
+8ih4-zp65,countydistrictcode,071-,31.81
+8ih4-zp65,cestreetaddressline2,Suite C,76.35
+8ih4-zp65,cemailingaddressline2,Suite 250,76.82
+8ih4-zp65,pmsnacktime,15:00 - 16:00,80.08
+8ih4-zp65,pmsnackmealservicemethod,Self-Prep - Receives meals (Central Kitchen),80.08
+8ih4-zp65,pmsnackdaysserved,"M, T, W, TH, F",80.08
+8ih4-zp65,breakfasttime,7:30 - 8:30,38.8
+8ih4-zp65,breakfastmealservicemethod,Self-Prep - Prepares on site,38.8
+8ih4-zp65,breakfastdaysserved,"M, T, W, TH",38.8
+8ih4-zp65,sitestreetaddressline2,ATTN: KITCHEN/CAFETERIA,87.8
+8ih4-zp65,sitemailingaddressline2,ATTN: CAFETERIA/KITCHEN,84.94
+8ih4-zp65,siteterminationstatus,Contracting Entity Closed,91.45
+8ih4-zp65,siteterminatedasofdate,2023-06-14T00:00:00.000,91.45
+8ih4-zp65,amsnacktime,10:00 - 11:00,98.74
+8ih4-zp65,amsnackmealservicemethod,Self-Prep - Receives meals (Central Kitchen),98.74
+8ih4-zp65,amsnackdaysserved,"M, T, W, TH",98.74

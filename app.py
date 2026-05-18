@@ -22,17 +22,18 @@ import pandas as pd
 import streamlit as st
 
 
-LOOKUP_CSV = os.path.join("data", "lookup", "ce_site_search_master.csv")
+LOOKUP_CSV = os.path.join("data", "lookup", "ce_site_search_master_enriched_all_nc.csv")
 
 PHONE_SUFFIX_PATTERN = re.compile(r"(\d{7,})\.0(?=\D|$)")
 SPLIT_PATTERN = re.compile(r"[,|]")
 
 PAGE_TITLE = "CE/Site Lookup Dashboard"
 WARNING_TEXT = (
-    "This dashboard uses **reported meals**, not unique children served. "
-    "Non-congregate status is only shown as verified if explicitly available "
-    "in public source data. In the current data sources, no such field exists, "
-    "so non-congregate status is marked **Unknown** for every site."
+    "This dashboard uses **reported meals served**, not unique children served. "
+    "Verified non-congregate status is available only for sites covered by "
+    "TX Open Data SFSP/SSO/All Summer Sites contact datasets for program year "
+    "**2022–2023**. Sites outside those public-source fields remain marked "
+    "**Unknown**; **Unknown does not mean the site was congregate**."
 )
 
 TABLE_COLUMNS = [
@@ -43,31 +44,6 @@ TABLE_COLUMNS = [
     "total_reported_meals", "latest_program_year",
     "non_congregate_status", "data_quality_flags",
 ]
-
-DETAIL_FIELDS = [
-    ("CE ID", "ce_id"),
-    ("CE name", "ce_name"),
-    ("Site ID", "site_id"),
-    ("Site name", "site_name"),
-    ("Site address", "site_address_full"),
-    ("CE address", "ce_address_full"),
-    ("Site contact", "site_contact_summary"),
-    ("CE contacts", "ce_contact_summary"),
-    ("Program types observed", "program_types_observed"),
-    ("Site type", "site_type"),
-    ("Operation dates", "operation_dates_summary"),
-    ("Serving dates", "serving_dates_summary"),
-    ("Meal types served", "meal_types_served"),
-    ("Service times", "service_times_summary"),
-    ("SNP flags", "snp_flags_summary"),
-    ("Eligibility indicators", "eligibility_indicators_summary"),
-    ("Total reported meals", "total_reported_meals"),
-    ("Latest program year", "latest_program_year"),
-    ("Non-congregate status", "non_congregate_status"),
-    ("Non-congregate source", "non_congregate_source"),
-    ("Data-quality flags", "data_quality_flags"),
-]
-
 
 # --------------------------------------------------------------------
 # Helpers
@@ -113,13 +89,20 @@ def display_value(value) -> str:
     return s if s else "—"
 
 
-def format_meals(value) -> str:
+def format_number(value) -> str:
+    """Format a numeric value with thousands separators. Drops the decimal
+    when the value is a whole number (so 71028.0 -> "71,028", and 44.76
+    stays as "44.76"). Returns "—" for NaN / None and falls back to the
+    display string for anything that won't parse as float."""
     if pd.isna(value):
         return "—"
     try:
-        return f"{int(float(value)):,}"
+        f = float(value)
     except (TypeError, ValueError):
-        return str(value)
+        return display_value(value)
+    if f.is_integer():
+        return f"{int(f):,}"
+    return f"{f:,.2f}"
 
 
 # --------------------------------------------------------------------
@@ -135,6 +118,13 @@ def load_data(path: str = LOOKUP_CSV) -> pd.DataFrame:
     ):
         if col in df.columns:
             df[col] = df[col].apply(clean_phone_text)
+    # Replace the U+FFFD replacement char that leaked from the source on the
+    # "Non-Congregate - Mobile route" value with an em-dash for display.
+    for col in ("meal_service_type_public", "non_congregate_status"):
+        if col in df.columns:
+            df[col] = df[col].apply(
+                lambda v: v if pd.isna(v) else str(v).replace("�", "—")
+            )
     for col in ("latitude", "longitude"):
         if col in df.columns:
             df[col] = pd.to_numeric(df[col], errors="coerce")
@@ -188,6 +178,21 @@ def apply_filters(df: pd.DataFrame, selections: dict) -> pd.DataFrame:
         out = out[value_contains_any(out["data_quality_flags"].str.replace("|", ",", regex=False),
                                      selections["flag_filters"])]
 
+    if selections.get("nc_statuses") and "non_congregate_status" in out.columns:
+        out = out[out["non_congregate_status"].astype(str).isin(selections["nc_statuses"])]
+
+    if selections.get("ru_statuses") and "rural_urban_status" in out.columns:
+        out = out[out["rural_urban_status"].astype(str).isin(selections["ru_statuses"])]
+
+    if selections.get("meal_service_types") and "meal_service_type_public" in out.columns:
+        out = out[out["meal_service_type_public"].astype(str).isin(selections["meal_service_types"])]
+
+    if selections.get("years_verified") and "program_years_verified" in out.columns:
+        out = out[value_contains_any(out["program_years_verified"], selections["years_verified"])]
+
+    if selections.get("source_ids") and "source_dataset_ids" in out.columns:
+        out = out[value_contains_any(out["source_dataset_ids"], selections["source_ids"])]
+
     if selections.get("only_with_meals") and "total_reported_meals" in out.columns:
         out = out[pd.to_numeric(out["total_reported_meals"], errors="coerce").fillna(0) > 0]
 
@@ -221,24 +226,159 @@ def render_metrics(df: pd.DataFrame) -> None:
     no_activity = flags.str.contains("no_reported_meal_activity").sum()
     cols2[2].metric("No reported meal activity", f"{no_activity:,}")
 
+    # Row 3: public-source NC enrichment counts (2022-2023 verified subset)
+    cols3 = st.columns(4)
+    if "non_congregate_status" in df.columns:
+        statuses = df["non_congregate_status"].fillna("Unknown").astype(str).str.strip()
+        verified = int((statuses != "Unknown").sum())
+        confirmed_nc = int(statuses.str.contains("Non-Congregate", na=False).sum())
+        unknown_nc = int((statuses == "Unknown").sum())
+    else:
+        verified = 0
+        confirmed_nc = 0
+        unknown_nc = 0
+    cols3[0].metric("Verified NC source-matched", f"{verified:,}")
+    cols3[1].metric("Confirmed non-congregate", f"{confirmed_nc:,}")
 
-def render_detail_cards(df: pd.DataFrame, limit: int = 25) -> None:
+    if "rural_urban_status" in df.columns:
+        ru = df["rural_urban_status"].fillna("").astype(str).str.strip()
+        rural = int((ru == "Rural").sum())
+    else:
+        rural = 0
+    cols3[2].metric("Rural records", f"{rural:,}")
+    cols3[3].metric("Unknown NC records", f"{unknown_nc:,}")
+
+    st.caption(
+        "Verified NC counts reflect only the public 2022–2023 meal service type "
+        "sources. Unknown records may include sites from other years where TDA "
+        "did not publish mealservicetype."
+    )
+
+
+def _build_selectbox_options(df: pd.DataFrame):
+    """Build a list of (display_label, dataframe_index) tuples for the
+    selected-site selectbox. Labels follow the spec format
+    `CEID | CE Name | SiteID | Site Name | Latest Year` and are made
+    unique by appending the dataframe row index when collisions occur."""
+    base_labels = []
+    for _, row in df.iterrows():
+        base_labels.append(" | ".join([
+            display_value(row.get("ce_id")),
+            display_value(row.get("ce_name")),
+            display_value(row.get("site_id")),
+            display_value(row.get("site_name")),
+            display_value(row.get("latest_program_year")),
+        ]))
+
+    seen = {}
+    unique_labels = []
+    for label, idx in zip(base_labels, df.index):
+        if label in seen:
+            unique_labels.append(f"{label}  [row {idx}]")
+        else:
+            seen[label] = True
+            unique_labels.append(label)
+    return list(zip(unique_labels, df.index.tolist()))
+
+
+def _render_field_block(row: pd.Series, fields) -> None:
+    for label, col in fields:
+        if col not in row.index:
+            continue
+        raw = row.get(col)
+        if col == "total_reported_meals":
+            pretty = format_number(raw)
+        elif col == "latest_program_year":
+            pretty = format_number(raw) if pd.notna(raw) else "—"
+        else:
+            pretty = display_value(raw)
+        st.markdown(f"**{label}:** {pretty}")
+
+
+def render_selected_site_panel(df: pd.DataFrame) -> None:
+    """Replace the old first-25-expanders with a single selectbox + clean
+    detail panel for the chosen site. Sections follow the task spec."""
     if df.empty:
         return
-    st.markdown(f"### Detail view (first {min(limit, len(df))} of {len(df):,})")
-    subset = df.head(limit)
-    for _, row in subset.iterrows():
-        title = f"{display_value(row.get('ce_name'))} — {display_value(row.get('site_name'))} (site {display_value(row.get('site_id'))})"
-        with st.expander(title):
-            for label, col in DETAIL_FIELDS:
-                if col not in row.index:
-                    continue
-                raw = row.get(col)
-                if col == "total_reported_meals":
-                    pretty = format_meals(raw)
-                else:
-                    pretty = display_value(raw)
-                st.markdown(f"**{label}:** {pretty}")
+
+    st.markdown("---")
+    st.markdown("### Site details")
+
+    options = _build_selectbox_options(df)
+    labels = [lbl for lbl, _ in options]
+    label_to_index = dict(options)
+
+    selection = st.selectbox(
+        "Select a site to view details",
+        options=labels,
+        index=0,
+    )
+    if selection is None or selection not in label_to_index:
+        return
+
+    row = df.loc[label_to_index[selection]]
+
+    site_name = display_value(row.get("site_name"))
+    ce_name = display_value(row.get("ce_name"))
+    st.subheader(f"{site_name}  —  {ce_name}")
+
+    col_ce, col_site = st.columns(2)
+
+    with col_ce:
+        st.markdown("#### CE / District")
+        _render_field_block(row, [
+            ("CE ID", "ce_id"),
+            ("CE Name", "ce_name"),
+            ("CE Address", "ce_address_full"),
+            ("CE Contact Summary", "ce_contact_summary"),
+        ])
+
+    with col_site:
+        st.markdown("#### Site")
+        _render_field_block(row, [
+            ("Site ID", "site_id"),
+            ("Site Name", "site_name"),
+            ("Site Address", "site_address_full"),
+            ("Site Contact Summary", "site_contact_summary"),
+        ])
+        lat = row.get("latitude") if "latitude" in row.index else None
+        lon = row.get("longitude") if "longitude" in row.index else None
+        if (lat is not None and pd.notna(lat)) or (lon is not None and pd.notna(lon)):
+            lat_str = format_number(lat) if pd.notna(lat) else "—"
+            lon_str = format_number(lon) if pd.notna(lon) else "—"
+            st.markdown(f"**Latitude / Longitude:** {lat_str} / {lon_str}")
+
+    st.markdown("#### Programs and Operations")
+    _render_field_block(row, [
+        ("Program Types Observed", "program_types_observed"),
+        ("Site Type", "site_type"),
+        ("Operation Dates Summary", "operation_dates_summary"),
+        ("Serving Dates Summary", "serving_dates_summary"),
+        ("Meal Types Served", "meal_types_served"),
+        ("Service Times Summary", "service_times_summary"),
+        ("Public Meal Service Type", "meal_service_type_public"),
+        ("SFSP Site Type Public Source", "sfsp_site_type_public"),
+        ("Meal Service Methods", "meal_service_methods_summary"),
+        ("Program Years Verified", "program_years_verified"),
+        ("Source Dataset IDs", "source_dataset_ids"),
+    ])
+
+    st.markdown("#### SNP / Eligibility Context")
+    _render_field_block(row, [
+        ("SNP Flags Summary", "snp_flags_summary"),
+        ("Eligibility Indicators Summary", "eligibility_indicators_summary"),
+    ])
+
+    st.markdown("#### Activity and Data Quality")
+    _render_field_block(row, [
+        ("Total Reported Meals", "total_reported_meals"),
+        ("Latest Program Year", "latest_program_year"),
+        ("Non-Congregate Status", "non_congregate_status"),
+        ("Non-Congregate Source", "non_congregate_source"),
+        ("Rural / Urban Status", "rural_urban_status"),
+        ("Rural / Urban Source", "rural_urban_source"),
+        ("Data Quality Flags", "data_quality_flags"),
+    ])
 
 
 def render_map(df: pd.DataFrame) -> None:
@@ -278,7 +418,7 @@ def main() -> None:
     if not os.path.exists(LOOKUP_CSV):
         st.error(
             f"Lookup file not found at `{LOOKUP_CSV}`. "
-            "Run `python scripts/03_build_ce_site_lookup_tables.py` first."
+            "Run `python scripts/07_enrich_lookup_with_all_public_non_congregate.py` first."
         )
         st.stop()
 
@@ -319,6 +459,46 @@ def main() -> None:
     else:
         selected_flags = []
 
+    if "non_congregate_status" in data.columns:
+        nc_options = sorted(data["non_congregate_status"].dropna().astype(str).unique())
+        selected_nc_statuses = st.sidebar.multiselect(
+            "Non-congregate status", nc_options, placeholder="All NC statuses"
+        )
+    else:
+        selected_nc_statuses = []
+
+    if "rural_urban_status" in data.columns:
+        ru_options = sorted(data["rural_urban_status"].dropna().astype(str).unique())
+        selected_ru_statuses = st.sidebar.multiselect(
+            "Rural / Urban", ru_options, placeholder="All / unmatched"
+        )
+    else:
+        selected_ru_statuses = []
+
+    if "meal_service_type_public" in data.columns:
+        mst_options = sorted(data["meal_service_type_public"].dropna().astype(str).unique())
+        selected_mst = st.sidebar.multiselect(
+            "Public meal service type", mst_options, placeholder="All / unmatched"
+        )
+    else:
+        selected_mst = []
+
+    if "program_years_verified" in data.columns:
+        years_verified_options = unique_split_values(data["program_years_verified"])
+        selected_years_verified = st.sidebar.multiselect(
+            "Program years verified", years_verified_options, placeholder="All / unmatched"
+        )
+    else:
+        selected_years_verified = []
+
+    if "source_dataset_ids" in data.columns:
+        source_id_options = unique_split_values(data["source_dataset_ids"])
+        selected_source_ids = st.sidebar.multiselect(
+            "Verified source dataset", source_id_options, placeholder="All / unmatched"
+        )
+    else:
+        selected_source_ids = []
+
     only_with_meals = st.sidebar.checkbox("Only sites with reported meal activity", value=False)
     only_with_latlon = st.sidebar.checkbox("Only sites with latitude/longitude", value=False)
 
@@ -335,6 +515,11 @@ def main() -> None:
         "program_types": selected_programs,
         "program_years": selected_years,
         "flag_filters": selected_flags,
+        "nc_statuses": selected_nc_statuses,
+        "ru_statuses": selected_ru_statuses,
+        "meal_service_types": selected_mst,
+        "years_verified": selected_years_verified,
+        "source_ids": selected_source_ids,
         "only_with_meals": only_with_meals,
         "only_with_latlon": only_with_latlon,
     })
@@ -345,7 +530,7 @@ def main() -> None:
     st.markdown("---")
 
     if filtered.empty:
-        st.info("No results match the current search and filters. Try widening the filters or clearing the search box.")
+        st.info("No matching sites found. Try broadening your search or clearing filters.")
         return
 
     render_download(filtered)
@@ -361,7 +546,7 @@ def main() -> None:
         st.dataframe(table_view, use_container_width=True, hide_index=True)
 
     render_map(filtered)
-    render_detail_cards(filtered, limit=25)
+    render_selected_site_panel(filtered)
 
 
 if __name__ == "__main__":

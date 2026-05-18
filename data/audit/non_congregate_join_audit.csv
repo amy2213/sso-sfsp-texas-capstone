@@ -1,0 +1,3 @@
+source_dataset_id,source_label,row_count,distinct_ce_id,distinct_site_id,keys_joined_to_search_master,join_pct,has_meal_service_type,has_rural_urban,has_site_type,created_at
+8ih4-zp65,TX Open Data candidate 8ih4-zp65 (MealServiceType expected),2304,143,1064,1965,85.29,True,True,True,2026-05-17T21:17:28
+temp-7qi5,TX Open Data candidate temp-7qi5 (rural / non-congregate expected),12620,1093,1565,8649,68.53,False,False,True,2026-05-17T21:17:28

@@ -1,0 +1,2 @@
+source_rows,source_distinct_ce_site_keys,search_master_rows,matched_rows,unmatched_rows,matched_pct,congregate_count,non_congregate_grab_go_count,non_congregate_mobile_route_count,non_congregate_home_delivery_count,total_non_congregate_count,rural_count,urban_count,unknown_nc_count_after_enrichment,created_at
+10554,5276,15855,4896,10959,30.88,4862,29,3,2,34,170,1795,10959,2026-05-17T21:45:36

@@ -1,0 +1,33 @@
+dataset_id,column_name,value,record_count
+8ih4-zp65,mealservicetype,Congregate,2285
+8ih4-zp65,mealservicetype,Non-Congregate - Grab-and-go at central site,16
+8ih4-zp65,mealservicetype,Non-Congregate - Mobile route – Meals are picked up by children/parents directly from the vehicle.,3
+8ih4-zp65,ruralorurbancode,Urban,2106
+8ih4-zp65,ruralorurbancode,Rural,198
+8ih4-zp65,sitetype,Open,1985
+8ih4-zp65,sitetype,Closed - Enrolled in Needy Area,170
+8ih4-zp65,sitetype,Restricted Open,140
+8ih4-zp65,sitetype,Camp - Non-Residential,6
+8ih4-zp65,sitetype,Closed - Enrolled in Non-Needy Area,3
+24ie-9cft,mealservicetype,Congregate,5232
+24ie-9cft,mealservicetype,Non-Congregate - Grab-and-go at central site,39
+24ie-9cft,mealservicetype,Non-Congregate - Mobile route – Meals are picked up by children/parents directly from the vehicle.,5
+24ie-9cft,mealservicetype,Non-Congregate - Home delivery,2
+24ie-9cft,sitetype,Open,4765
+24ie-9cft,sitetype,Closed - Enrolled in Needy Area,170
+24ie-9cft,sitetype,Restricted Open,140
+24ie-9cft,sitetype,Closed,120
+24ie-9cft,sitetype,Open Restricted,71
+24ie-9cft,sitetype,Camp - Non-Residential,6
+24ie-9cft,sitetype,Closed - Enrolled in Non-Needy Area,3
+24ie-9cft,sitetype,Camp,2
+24ie-9cft,sitetype,Migrant,1
+82b8-iuvu,mealservicetype,Congregate,2947
+82b8-iuvu,mealservicetype,Non-Congregate - Grab-and-go at central site,23
+82b8-iuvu,mealservicetype,Non-Congregate - Home delivery,2
+82b8-iuvu,mealservicetype,Non-Congregate - Mobile route – Meals are picked up by children/parents directly from the vehicle.,2
+82b8-iuvu,sitetype,Open,2780
+82b8-iuvu,sitetype,Closed,120
+82b8-iuvu,sitetype,Open Restricted,71
+82b8-iuvu,sitetype,Camp,2
+82b8-iuvu,sitetype,Migrant,1

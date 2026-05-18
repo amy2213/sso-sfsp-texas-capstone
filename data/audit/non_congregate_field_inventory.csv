@@ -1,0 +1,163 @@
+dataset_id,column_name,category,sample_value,null_pct
+8ih4-zp65,odprecid,unknown,06083-0077,0.0
+8ih4-zp65,programyear,program year,2022-2023,0.0
+8ih4-zp65,reporttype,unknown,SFSPCONTACTS,0.0
+8ih4-zp65,ceid,CE identity,06083,0.0
+8ih4-zp65,cename,CE identity,"""With Helping Hands"" serving nutritious meals",0.0
+8ih4-zp65,typeofagency,site type,Private Non Profit Organization,0.0
+8ih4-zp65,typeoforg,site type,Private Nonprofit,0.0
+8ih4-zp65,esc,unknown,4,0.0
+8ih4-zp65,tdaregion,unknown,3,0.0
+8ih4-zp65,cestatus,unknown,Active,0.0
+8ih4-zp65,ceapplicationcycle,unknown,RENEWAL,0.0
+8ih4-zp65,siteid,site identity,0077,0.0
+8ih4-zp65,sitename,site identity,Almeda Park Apartments,0.0
+8ih4-zp65,covidmealsite,unknown,False,0.0
+8ih4-zp65,sitestatus,unknown,ACTIVE,0.0
+8ih4-zp65,cecounty,unknown,HARRIS,0.0
+8ih4-zp65,sitecounty,unknown,HARRIS,0.0
+8ih4-zp65,ruralorurbancode,rural / urban indicator,Urban,0.0
+8ih4-zp65,cestreetaddressline1,address,12510 Unison Rd.,0.0
+8ih4-zp65,cestreetaddresscity,address,HOUSTON,0.0
+8ih4-zp65,cestreetaddressstate,address,TX,0.0
+8ih4-zp65,cestreetaddresszipcode,address,77044-2324,0.0
+8ih4-zp65,cemailingaddressline1,address,12510 Unison Rd.,0.0
+8ih4-zp65,cemailingaddresscity,address,HOUSTON,0.0
+8ih4-zp65,cemailingaddressstate,address,TX,0.0
+8ih4-zp65,cemailingaddresszipcode,address,77044-2324,0.0
+8ih4-zp65,sitestreetaddressline1,address,10950 Tanner Park Ct.,0.0
+8ih4-zp65,sitestreetaddresscity,address,Houston,0.0
+8ih4-zp65,sitestreetaddressstate,address,TX,0.0
+8ih4-zp65,sitestreetaddresszipcode,address,77075,0.0
+8ih4-zp65,sitemailingaddressline1,address,12510 Unison,0.0
+8ih4-zp65,sitemailingaddresscity,address,Houston,0.0
+8ih4-zp65,sitemailingaddressstate,address,TX,0.0
+8ih4-zp65,sitemailingaddresszipcode,address,77044,0.0
+8ih4-zp65,sfspcontactsalutation,contact,Mrs.,40.06
+8ih4-zp65,sfspcontactfirstname,contact,Jamie,0.0
+8ih4-zp65,sfspcontactlastname,contact,Williams,0.0
+8ih4-zp65,sfspcontacttitleposition,contact,Executive Director,0.0
+8ih4-zp65,sfspcontactemail,contact,withhelpinghands@yahoo.com,0.0
+8ih4-zp65,sfspcontactphone,contact,8325151023,0.0
+8ih4-zp65,authorizedindiv1salutation,unknown,Mrs.,17.06
+8ih4-zp65,authorizedindiv1firstname,unknown,Jamie,0.0
+8ih4-zp65,authorizedindiv1lastname,unknown,Williams,0.0
+8ih4-zp65,authorizedindiv1titleposition,unknown,Executive Director,0.0
+8ih4-zp65,authorizedindiv1email,contact,withhelpinghands@yahoo.com,0.0
+8ih4-zp65,authorizedindiv1phone,contact,8325151023,0.0
+8ih4-zp65,sitesupervisorsalutation,unknown,Ms.,47.96
+8ih4-zp65,sitesupervisorfirstname,unknown,Jennifer,0.0
+8ih4-zp65,sitesupervisorlastname,unknown,Borneman,0.0
+8ih4-zp65,sitesupervisortitleposition,unknown,Site Supervisor,0.0
+8ih4-zp65,sitesupervisoremail,contact,jborneman@prspurpose.org,18.71
+8ih4-zp65,sitesupervisorphone,contact,8325416317,0.0
+8ih4-zp65,sitetype,site type,Open,0.0
+8ih4-zp65,sitestartdate,dates,2023-06-13T00:00:00.000,0.0
+8ih4-zp65,siteenddate,dates,2023-08-11T00:00:00.000,0.0
+8ih4-zp65,daysofoperation,dates,M,0.0
+8ih4-zp65,mealtypesserved,meal service type,Dinner,0.0
+8ih4-zp65,suppertime,unknown,14:00 - 16:00,96.31
+8ih4-zp65,suppermealservicemethod,unknown,Self-Prep - Receives meals (Central Kitchen),96.31
+8ih4-zp65,supperdaysserved,unknown,M,96.31
+8ih4-zp65,geolocation,unknown,"{'type': 'Point', 'coordinates': [-95.22462704, 29.618983017]}",0.0
+8ih4-zp65,mealservicetype,meal service type,Congregate,0.0
+8ih4-zp65,computed_region_59h5_km5p,unknown,121,0.0
+8ih4-zp65,computed_region_de3d_j5mj,unknown,16,0.0
+8ih4-zp65,computed_region_ji3u_dqif,unknown,29,0.0
+8ih4-zp65,computed_region_rk7b_wvzt,unknown,6,0.0
+8ih4-zp65,computed_region_ptpy_sh92,unknown,147,0.0
+8ih4-zp65,lunchtime,unknown,12:00 - 14:00,4.21
+8ih4-zp65,lunchmealservicemethod,unknown,Self-Prep - Receives meals (Central Kitchen),4.21
+8ih4-zp65,lunchdaysserved,unknown,"T, W, TH",4.21
+8ih4-zp65,countydistrictcode,unknown,071-,31.81
+8ih4-zp65,cestreetaddressline2,address,Suite C,76.35
+8ih4-zp65,cemailingaddressline2,address,Suite 250,76.82
+8ih4-zp65,pmsnacktime,unknown,15:00 - 16:00,80.08
+8ih4-zp65,pmsnackmealservicemethod,unknown,Self-Prep - Receives meals (Central Kitchen),80.08
+8ih4-zp65,pmsnackdaysserved,unknown,"M, T, W, TH, F",80.08
+8ih4-zp65,breakfasttime,unknown,7:30 - 8:30,38.8
+8ih4-zp65,breakfastmealservicemethod,unknown,Self-Prep - Prepares on site,38.8
+8ih4-zp65,breakfastdaysserved,unknown,"M, T, W, TH",38.8
+8ih4-zp65,sitestreetaddressline2,address,ATTN: KITCHEN/CAFETERIA,87.8
+8ih4-zp65,sitemailingaddressline2,address,ATTN: CAFETERIA/KITCHEN,84.94
+8ih4-zp65,siteterminationstatus,unknown,Contracting Entity Closed,91.45
+8ih4-zp65,siteterminatedasofdate,dates,2023-06-14T00:00:00.000,91.45
+8ih4-zp65,amsnacktime,unknown,10:00 - 11:00,98.74
+8ih4-zp65,amsnackmealservicemethod,unknown,Self-Prep - Receives meals (Central Kitchen),98.74
+8ih4-zp65,amsnackdaysserved,unknown,"M, T, W, TH",98.74
+temp-7qi5,programyear,program year,2020-2021,0.0
+temp-7qi5,reporttype,unknown,SSOCONTACTS,0.0
+temp-7qi5,ceid,CE identity,00027,0.0
+temp-7qi5,cename,CE identity,SEALY ISD,0.0
+temp-7qi5,typeofagency,site type,Educational Institution,0.0
+temp-7qi5,typeoforg,site type,Public,0.0
+temp-7qi5,esc,unknown,6,0.0
+temp-7qi5,tdaregion,unknown,3,0.0
+temp-7qi5,cestatus,unknown,Active,0.0
+temp-7qi5,ceapplicationcycle,unknown,RENEWAL,0.0
+temp-7qi5,siteid,site identity,0041,0.0
+temp-7qi5,sitename,site identity,SEALY J H,0.0
+temp-7qi5,covidmealsite,unknown,NO,0.0
+temp-7qi5,sitestatus,unknown,Active,0.0
+temp-7qi5,siteapplicationcycle,unknown,NEWAPP,0.0
+temp-7qi5,countydistrictcode,unknown,008-902,0.06
+temp-7qi5,cecounty,unknown,AUSTIN,0.0
+temp-7qi5,sitecounty,unknown,AUSTIN,0.0
+temp-7qi5,cestreetaddressline1,address,939 TIGER LN,0.0
+temp-7qi5,cestreetaddresscity,address,SEALY,0.0
+temp-7qi5,cestreetaddressstate,address,TX,0.0
+temp-7qi5,cestreetaddresszipcode,address,77474-3211,0.0
+temp-7qi5,cemailingaddressline1,address,939 TIGER LN,0.0
+temp-7qi5,cemailingaddresscity,address,SEALY,0.0
+temp-7qi5,cemailingaddressstate,address,TX,0.0
+temp-7qi5,cemailingaddresszipcode,address,77474-3211,0.0
+temp-7qi5,sitestreetaddressline1,address,939 Tiger Lane,0.0
+temp-7qi5,sitestreetaddresscity,address,Sealy,0.0
+temp-7qi5,sitestreetaddressstate,address,TX,0.0
+temp-7qi5,sitestreetaddresszipcode,address,77474,0.0
+temp-7qi5,superintendentsalutation,dates,Dr.,0.13
+temp-7qi5,superintendentfirstname,dates,Bryan,0.0
+temp-7qi5,superintendentlastname,dates,Hallmark,0.0
+temp-7qi5,superintendenttitleposition,dates,SUPERINTENDENT,0.0
+temp-7qi5,superintendentemail,contact,bhallmark@sealyisd.com,0.0
+temp-7qi5,superintendentphone,contact,9798853516,0.0
+temp-7qi5,childnutdirsalutation,unknown,Mrs.,1.24
+temp-7qi5,childnutdirfirstname,unknown,Lisa,0.0
+temp-7qi5,childnutdirlastname,unknown,Svoboda,0.0
+temp-7qi5,childnutdirtitleposition,unknown,Chief Financial Officer,0.0
+temp-7qi5,childnutdiremail,contact,lsvoboda@sealyisd.com,0.0
+temp-7qi5,childnutdirphone,contact,9798853516,0.0
+temp-7qi5,seamlesssummercontactfirstname,contact,Annette,0.0
+temp-7qi5,seamlesssummercontactlastname,contact,Strayer,0.0
+temp-7qi5,seamlesssummercontacttit,contact,Food Service Supervisor,0.0
+temp-7qi5,seamlesssummercontactemail,contact,ASTRAYER@SEALYISD.COM,0.0
+temp-7qi5,seamlesssummercontactphone,contact,9799873300,0.0
+temp-7qi5,sitetype,site type,Closed,0.0
+temp-7qi5,sitestartdate,dates,2021-08-18T00:00:00.000,0.0
+temp-7qi5,siteenddate,dates,2021-09-30T00:00:00.000,0.0
+temp-7qi5,daysofoperation,dates,"M,T,W,TH,F",0.0
+temp-7qi5,mealtypesserved,meal service type,"Breakfast, Lunch",0.0
+temp-7qi5,breakfasttime,unknown,7:30 AM - 9:00 AM,0.8
+temp-7qi5,breakfastdaysserved,unknown,"M, T, W, TH, F",0.8
+temp-7qi5,lunchtime,unknown,10:30 AM - 1:30 PM,0.61
+temp-7qi5,lunchdaysserved,unknown,"M, T, W, TH, F",0.61
+temp-7qi5,geoloc_data,unknown,"{'type': 'Point', 'coordinates': [-96.159451, 29.772894]}",9.88
+temp-7qi5,computed_region_59h5_km5p,unknown,92,9.94
+temp-7qi5,computed_region_de3d_j5mj,unknown,16,9.94
+temp-7qi5,computed_region_5xir_5pdr,unknown,18,9.88
+temp-7qi5,computed_region_45pq_umjc,unknown,13,9.98
+temp-7qi5,computed_region_czj8_xg26,unknown,10,9.88
+temp-7qi5,seamlesssummercontactsal,contact,Mrs.,34.21
+temp-7qi5,cestreetaddressline2,address,P. O. Box 2129,95.55
+temp-7qi5,siteterminationstatus,unknown,Self Cancelled,94.93
+temp-7qi5,siteterminatedasofdate,dates,2021-05-27T00:00:00.000,94.93
+temp-7qi5,suppertime,unknown,4:00 PM - 4:30 PM,99.93
+temp-7qi5,supperdaysserved,unknown,"M, T, W, TH",99.93
+temp-7qi5,sitestreetaddressline2,address,PO Box218,95.13
+temp-7qi5,cemailingaddressline2,address,Suite # 100,95.15
+temp-7qi5,pmsnacktime,unknown,3:00 PM - 3:30 PM,99.79
+temp-7qi5,pmsnackdaysserved,unknown,"M, T, W, TH",99.79
+temp-7qi5,amsnacktime,unknown,9:00 AM - 9:30 AM,99.97
+temp-7qi5,amsnackdaysserved,unknown,"M, T, W, TH",99.97
+temp-7qi5,ceterminationstatus,unknown,Self Cancelled,99.98
+temp-7qi5,ceterminatedasofdate,dates,2021-06-30T00:00:00.000,99.98

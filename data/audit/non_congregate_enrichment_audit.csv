@@ -1,0 +1,2 @@
+source_rows,source_distinct_ce_id,source_distinct_site_id,search_master_rows,matched_rows,unmatched_rows,matched_pct,congregate_count,non_congregate_grab_go_count,non_congregate_mobile_route_count,total_non_congregate_count,rural_count,urban_count,unknown_nc_count_after_enrichment,created_at
+2304,143,1064,15855,1965,13890,12.39,1954,9,2,11,170,1795,13890,2026-05-17T21:23:16

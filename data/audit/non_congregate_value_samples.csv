@@ -1,0 +1,35 @@
+dataset_id,column_name,value,record_count
+8ih4-zp65,ruralorurbancode,Urban,2106
+8ih4-zp65,ruralorurbancode,Rural,198
+8ih4-zp65,sitetype,Open,1985
+8ih4-zp65,sitetype,Closed - Enrolled in Needy Area,170
+8ih4-zp65,sitetype,Restricted Open,140
+8ih4-zp65,sitetype,Camp - Non-Residential,6
+8ih4-zp65,sitetype,Closed - Enrolled in Non-Needy Area,3
+8ih4-zp65,suppermealservicemethod,<<NULL>>,2219
+8ih4-zp65,suppermealservicemethod,Self-Prep - Receives meals (Central Kitchen),76
+8ih4-zp65,suppermealservicemethod,Self-Prep - Prepares on site,8
+8ih4-zp65,suppermealservicemethod,Vended by Food Service Management Company (FSMC),1
+8ih4-zp65,mealservicetype,Congregate,2285
+8ih4-zp65,mealservicetype,Non-Congregate - Grab-and-go at central site,16
+8ih4-zp65,mealservicetype,Non-Congregate - Mobile route – Meals are picked up by children/parents directly from the vehicle.,3
+8ih4-zp65,lunchmealservicemethod,Self-Prep - Receives meals (Central Kitchen),1142
+8ih4-zp65,lunchmealservicemethod,Self-Prep - Prepares on site,672
+8ih4-zp65,lunchmealservicemethod,Vended by Food Service Management Company (FSMC),393
+8ih4-zp65,lunchmealservicemethod,<<NULL>>,97
+8ih4-zp65,pmsnackmealservicemethod,<<NULL>>,1845
+8ih4-zp65,pmsnackmealservicemethod,Self-Prep - Receives meals (Central Kitchen),374
+8ih4-zp65,pmsnackmealservicemethod,Vended by Food Service Management Company (FSMC),67
+8ih4-zp65,pmsnackmealservicemethod,Self-Prep - Prepares on site,17
+8ih4-zp65,pmsnackmealservicemethod,Vended by another SFSP Contracting Entity,1
+8ih4-zp65,breakfastmealservicemethod,<<NULL>>,894
+8ih4-zp65,breakfastmealservicemethod,Self-Prep - Prepares on site,644
+8ih4-zp65,breakfastmealservicemethod,Self-Prep - Receives meals (Central Kitchen),569
+8ih4-zp65,breakfastmealservicemethod,Vended by Food Service Management Company (FSMC),197
+8ih4-zp65,amsnackmealservicemethod,<<NULL>>,2275
+8ih4-zp65,amsnackmealservicemethod,Self-Prep - Receives meals (Central Kitchen),25
+8ih4-zp65,amsnackmealservicemethod,Self-Prep - Prepares on site,3
+8ih4-zp65,amsnackmealservicemethod,Vended by Food Service Management Company (FSMC),1
+temp-7qi5,sitetype,Closed,7570
+temp-7qi5,sitetype,Open,4785
+temp-7qi5,sitetype,Open Restricted,265

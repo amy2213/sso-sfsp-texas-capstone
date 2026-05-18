@@ -1,0 +1,163 @@
+dataset_id,column_name,sample_value,null_pct,dtype_inferred
+8ih4-zp65,odprecid,06083-0077,0.0,str
+8ih4-zp65,programyear,2022-2023,0.0,str
+8ih4-zp65,reporttype,SFSPCONTACTS,0.0,str
+8ih4-zp65,ceid,06083,0.0,str
+8ih4-zp65,cename,"""With Helping Hands"" serving nutritious meals",0.0,str
+8ih4-zp65,typeofagency,Private Non Profit Organization,0.0,str
+8ih4-zp65,typeoforg,Private Nonprofit,0.0,str
+8ih4-zp65,esc,4,0.0,str
+8ih4-zp65,tdaregion,3,0.0,str
+8ih4-zp65,cestatus,Active,0.0,str
+8ih4-zp65,ceapplicationcycle,RENEWAL,0.0,str
+8ih4-zp65,siteid,0077,0.0,str
+8ih4-zp65,sitename,Almeda Park Apartments,0.0,str
+8ih4-zp65,covidmealsite,False,0.0,bool
+8ih4-zp65,sitestatus,ACTIVE,0.0,str
+8ih4-zp65,cecounty,HARRIS,0.0,str
+8ih4-zp65,sitecounty,HARRIS,0.0,str
+8ih4-zp65,ruralorurbancode,Urban,0.0,str
+8ih4-zp65,cestreetaddressline1,12510 Unison Rd.,0.0,str
+8ih4-zp65,cestreetaddresscity,HOUSTON,0.0,str
+8ih4-zp65,cestreetaddressstate,TX,0.0,str
+8ih4-zp65,cestreetaddresszipcode,77044-2324,0.0,str
+8ih4-zp65,cemailingaddressline1,12510 Unison Rd.,0.0,str
+8ih4-zp65,cemailingaddresscity,HOUSTON,0.0,str
+8ih4-zp65,cemailingaddressstate,TX,0.0,str
+8ih4-zp65,cemailingaddresszipcode,77044-2324,0.0,str
+8ih4-zp65,sitestreetaddressline1,10950 Tanner Park Ct.,0.0,str
+8ih4-zp65,sitestreetaddresscity,Houston,0.0,str
+8ih4-zp65,sitestreetaddressstate,TX,0.0,str
+8ih4-zp65,sitestreetaddresszipcode,77075,0.0,str
+8ih4-zp65,sitemailingaddressline1,12510 Unison,0.0,str
+8ih4-zp65,sitemailingaddresscity,Houston,0.0,str
+8ih4-zp65,sitemailingaddressstate,TX,0.0,str
+8ih4-zp65,sitemailingaddresszipcode,77044,0.0,str
+8ih4-zp65,sfspcontactsalutation,Mrs.,40.06,str
+8ih4-zp65,sfspcontactfirstname,Jamie,0.0,str
+8ih4-zp65,sfspcontactlastname,Williams,0.0,str
+8ih4-zp65,sfspcontacttitleposition,Executive Director,0.0,str
+8ih4-zp65,sfspcontactemail,withhelpinghands@yahoo.com,0.0,str
+8ih4-zp65,sfspcontactphone,8325151023,0.0,str
+8ih4-zp65,authorizedindiv1salutation,Mrs.,17.06,str
+8ih4-zp65,authorizedindiv1firstname,Jamie,0.0,str
+8ih4-zp65,authorizedindiv1lastname,Williams,0.0,str
+8ih4-zp65,authorizedindiv1titleposition,Executive Director,0.0,str
+8ih4-zp65,authorizedindiv1email,withhelpinghands@yahoo.com,0.0,str
+8ih4-zp65,authorizedindiv1phone,8325151023,0.0,str
+8ih4-zp65,sitesupervisorsalutation,Ms.,47.96,str
+8ih4-zp65,sitesupervisorfirstname,Jennifer,0.0,str
+8ih4-zp65,sitesupervisorlastname,Borneman,0.0,str
+8ih4-zp65,sitesupervisortitleposition,Site Supervisor,0.0,str
+8ih4-zp65,sitesupervisoremail,jborneman@prspurpose.org,18.71,str
+8ih4-zp65,sitesupervisorphone,8325416317,0.0,str
+8ih4-zp65,sitetype,Open,0.0,str
+8ih4-zp65,sitestartdate,2023-06-13T00:00:00.000,0.0,str
+8ih4-zp65,siteenddate,2023-08-11T00:00:00.000,0.0,str
+8ih4-zp65,daysofoperation,M,0.0,str
+8ih4-zp65,mealtypesserved,Dinner,0.0,str
+8ih4-zp65,suppertime,14:00 - 16:00,96.31,str
+8ih4-zp65,suppermealservicemethod,Self-Prep - Receives meals (Central Kitchen),96.31,str
+8ih4-zp65,supperdaysserved,M,96.31,str
+8ih4-zp65,geolocation,"{'type': 'Point', 'coordinates': [-95.22462704, 29.618983017]}",0.0,object
+8ih4-zp65,mealservicetype,Congregate,0.0,str
+8ih4-zp65,computed_region_59h5_km5p,121,0.0,str
+8ih4-zp65,computed_region_de3d_j5mj,16,0.0,str
+8ih4-zp65,computed_region_ji3u_dqif,29,0.0,str
+8ih4-zp65,computed_region_rk7b_wvzt,6,0.0,str
+8ih4-zp65,computed_region_ptpy_sh92,147,0.0,str
+8ih4-zp65,lunchtime,12:00 - 14:00,4.21,str
+8ih4-zp65,lunchmealservicemethod,Self-Prep - Receives meals (Central Kitchen),4.21,str
+8ih4-zp65,lunchdaysserved,"T, W, TH",4.21,str
+8ih4-zp65,countydistrictcode,071-,31.81,str
+8ih4-zp65,cestreetaddressline2,Suite C,76.35,str
+8ih4-zp65,cemailingaddressline2,Suite 250,76.82,str
+8ih4-zp65,pmsnacktime,15:00 - 16:00,80.08,str
+8ih4-zp65,pmsnackmealservicemethod,Self-Prep - Receives meals (Central Kitchen),80.08,str
+8ih4-zp65,pmsnackdaysserved,"M, T, W, TH, F",80.08,str
+8ih4-zp65,breakfasttime,7:30 - 8:30,38.8,str
+8ih4-zp65,breakfastmealservicemethod,Self-Prep - Prepares on site,38.8,str
+8ih4-zp65,breakfastdaysserved,"M, T, W, TH",38.8,str
+8ih4-zp65,sitestreetaddressline2,ATTN: KITCHEN/CAFETERIA,87.8,str
+8ih4-zp65,sitemailingaddressline2,ATTN: CAFETERIA/KITCHEN,84.94,str
+8ih4-zp65,siteterminationstatus,Contracting Entity Closed,91.45,str
+8ih4-zp65,siteterminatedasofdate,2023-06-14T00:00:00.000,91.45,str
+8ih4-zp65,amsnacktime,10:00 - 11:00,98.74,str
+8ih4-zp65,amsnackmealservicemethod,Self-Prep - Receives meals (Central Kitchen),98.74,str
+8ih4-zp65,amsnackdaysserved,"M, T, W, TH",98.74,str
+temp-7qi5,programyear,2020-2021,0.0,str
+temp-7qi5,reporttype,SSOCONTACTS,0.0,str
+temp-7qi5,ceid,00027,0.0,str
+temp-7qi5,cename,SEALY ISD,0.0,str
+temp-7qi5,typeofagency,Educational Institution,0.0,str
+temp-7qi5,typeoforg,Public,0.0,str
+temp-7qi5,esc,6,0.0,str
+temp-7qi5,tdaregion,3,0.0,str
+temp-7qi5,cestatus,Active,0.0,str
+temp-7qi5,ceapplicationcycle,RENEWAL,0.0,str
+temp-7qi5,siteid,0041,0.0,str
+temp-7qi5,sitename,SEALY J H,0.0,str
+temp-7qi5,covidmealsite,NO,0.0,str
+temp-7qi5,sitestatus,Active,0.0,str
+temp-7qi5,siteapplicationcycle,NEWAPP,0.0,str
+temp-7qi5,countydistrictcode,008-902,0.06,str
+temp-7qi5,cecounty,AUSTIN,0.0,str
+temp-7qi5,sitecounty,AUSTIN,0.0,str
+temp-7qi5,cestreetaddressline1,939 TIGER LN,0.0,str
+temp-7qi5,cestreetaddresscity,SEALY,0.0,str
+temp-7qi5,cestreetaddressstate,TX,0.0,str
+temp-7qi5,cestreetaddresszipcode,77474-3211,0.0,str
+temp-7qi5,cemailingaddressline1,939 TIGER LN,0.0,str
+temp-7qi5,cemailingaddresscity,SEALY,0.0,str
+temp-7qi5,cemailingaddressstate,TX,0.0,str
+temp-7qi5,cemailingaddresszipcode,77474-3211,0.0,str
+temp-7qi5,sitestreetaddressline1,939 Tiger Lane,0.0,str
+temp-7qi5,sitestreetaddresscity,Sealy,0.0,str
+temp-7qi5,sitestreetaddressstate,TX,0.0,str
+temp-7qi5,sitestreetaddresszipcode,77474,0.0,str
+temp-7qi5,superintendentsalutation,Dr.,0.13,str
+temp-7qi5,superintendentfirstname,Bryan,0.0,str
+temp-7qi5,superintendentlastname,Hallmark,0.0,str
+temp-7qi5,superintendenttitleposition,SUPERINTENDENT,0.0,str
+temp-7qi5,superintendentemail,bhallmark@sealyisd.com,0.0,str
+temp-7qi5,superintendentphone,9798853516,0.0,str
+temp-7qi5,childnutdirsalutation,Mrs.,1.24,str
+temp-7qi5,childnutdirfirstname,Lisa,0.0,str
+temp-7qi5,childnutdirlastname,Svoboda,0.0,str
+temp-7qi5,childnutdirtitleposition,Chief Financial Officer,0.0,str
+temp-7qi5,childnutdiremail,lsvoboda@sealyisd.com,0.0,str
+temp-7qi5,childnutdirphone,9798853516,0.0,str
+temp-7qi5,seamlesssummercontactfirstname,Annette,0.0,str
+temp-7qi5,seamlesssummercontactlastname,Strayer,0.0,str
+temp-7qi5,seamlesssummercontacttit,Food Service Supervisor,0.0,str
+temp-7qi5,seamlesssummercontactemail,ASTRAYER@SEALYISD.COM,0.0,str
+temp-7qi5,seamlesssummercontactphone,9799873300,0.0,str
+temp-7qi5,sitetype,Closed,0.0,str
+temp-7qi5,sitestartdate,2021-08-18T00:00:00.000,0.0,str
+temp-7qi5,siteenddate,2021-09-30T00:00:00.000,0.0,str
+temp-7qi5,daysofoperation,"M,T,W,TH,F",0.0,str
+temp-7qi5,mealtypesserved,"Breakfast, Lunch",0.0,str
+temp-7qi5,breakfasttime,7:30 AM - 9:00 AM,0.8,str
+temp-7qi5,breakfastdaysserved,"M, T, W, TH, F",0.8,str
+temp-7qi5,lunchtime,10:30 AM - 1:30 PM,0.61,str
+temp-7qi5,lunchdaysserved,"M, T, W, TH, F",0.61,str
+temp-7qi5,geoloc_data,"{'type': 'Point', 'coordinates': [-96.159451, 29.772894]}",9.88,object
+temp-7qi5,computed_region_59h5_km5p,92,9.94,str
+temp-7qi5,computed_region_de3d_j5mj,16,9.94,str
+temp-7qi5,computed_region_5xir_5pdr,18,9.88,str
+temp-7qi5,computed_region_45pq_umjc,13,9.98,str
+temp-7qi5,computed_region_czj8_xg26,10,9.88,str
+temp-7qi5,seamlesssummercontactsal,Mrs.,34.21,str
+temp-7qi5,cestreetaddressline2,P. O. Box 2129,95.55,str
+temp-7qi5,siteterminationstatus,Self Cancelled,94.93,str
+temp-7qi5,siteterminatedasofdate,2021-05-27T00:00:00.000,94.93,str
+temp-7qi5,suppertime,4:00 PM - 4:30 PM,99.93,str
+temp-7qi5,supperdaysserved,"M, T, W, TH",99.93,str
+temp-7qi5,sitestreetaddressline2,PO Box218,95.13,str
+temp-7qi5,cemailingaddressline2,Suite # 100,95.15,str
+temp-7qi5,pmsnacktime,3:00 PM - 3:30 PM,99.79,str
+temp-7qi5,pmsnackdaysserved,"M, T, W, TH",99.79,str
+temp-7qi5,amsnacktime,9:00 AM - 9:30 AM,99.97,str
+temp-7qi5,amsnackdaysserved,"M, T, W, TH",99.97,str
+temp-7qi5,ceterminationstatus,Self Cancelled,99.98,str
+temp-7qi5,ceterminatedasofdate,2021-06-30T00:00:00.000,99.98,str
