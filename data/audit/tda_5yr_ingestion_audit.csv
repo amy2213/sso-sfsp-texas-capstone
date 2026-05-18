@@ -1,0 +1,38 @@
+dataset_id,label,category,period,canonical_year,row_count,column_count,fetch_status,error_message,raw_path,created_at
+24ie-9cft,All Summer Sites - Contact and Program Participation - 2023,summer_contacts,2023,2023,5278,79,ok,,data/raw_v2\summer_contacts\24ie-9cft.csv,2026-05-18T18:18:23
+24ie-9cft,All Summer Sites Contacts - 2022-2023 [MST source],non_congregate_sources,2022-2023,2023,5278,79,ok,,data/raw_v2\non_congregate_sources\24ie-9cft.csv,2026-05-18T18:18:28
+2npc-xpe8,SSO Reimbursements - 2024,summer_reimbursements,2024,2024,970,26,ok,,data/raw_v2\summer_reimbursements\2npc-xpe8.csv,2026-05-18T18:18:29
+3369-uxbk,SNP Contact and Program Participation - 2020-2021,snp_contacts,2020-2021,2021,8643,91,ok,,data/raw_v2\snp_contacts\3369-uxbk.csv,2026-05-18T18:18:33
+38xr-8xxu,SNP Contact and Program Participation - 2023-2024,snp_contacts,2023-2024,2024,8699,90,ok,,data/raw_v2\snp_contacts\38xr-8xxu.csv,2026-05-18T18:18:39
+4axx-sfpm,All Summer Sites - Meal Count - 2024,summer_meal_counts,2024,2024,8726,37,ok,,data/raw_v2\summer_meal_counts\4axx-sfpm.csv,2026-05-18T18:18:40
+5ejx-uftk,SNP Contact and Program Participation - 2024-2025,snp_contacts,2024-2025,2025,8683,92,ok,,data/raw_v2\snp_contacts\5ejx-uftk.csv,2026-05-18T18:18:44
+6agh-k7hx,SFSP Reimbursements - 2020-2021,summer_reimbursements,2020-2021,2021,1151,26,ok,,data/raw_v2\summer_reimbursements\6agh-k7hx.csv,2026-05-18T18:18:45
+7ae2-5muh,All Summer Sites - Contact and Program Participation - 2022,summer_contacts,2022,2022,12092,79,ok,,data/raw_v2\summer_contacts\7ae2-5muh.csv,2026-05-18T18:18:50
+7z9t-futv,All Summer Sites - Meal Count - 2025,summer_meal_counts,2025,2025,7987,37,ok,,data/raw_v2\summer_meal_counts\7z9t-futv.csv,2026-05-18T18:18:51
+82b8-iuvu,SSO Contacts (SSOCONTACTS) - 2022-2023 [MST source],non_congregate_sources,2022-2023,2023,2974,77,ok,,data/raw_v2\non_congregate_sources\82b8-iuvu.csv,2026-05-18T18:18:53
+8ih4-zp65,SFSP Contacts (SFSPCONTACTS) - 2022-2023 [MST source],non_congregate_sources,2022-2023,2023,2304,86,ok,,data/raw_v2\non_congregate_sources\8ih4-zp65.csv,2026-05-18T18:18:54
+8tne-ysan,SFSP + SSO Meal Counts - 2020-2021,summer_meal_counts,2020-2021,2021,100097,40,ok,,data/raw_v2\summer_meal_counts\8tne-ysan.csv,2026-05-18T18:19:06
+9bfr-4jjm,SNP Meal Reimbursements - 2021-2022,snp_reimbursements,2021-2022,2022,20514,49,ok,,data/raw_v2\snp_reimbursements\9bfr-4jjm.csv,2026-05-18T18:19:08
+c8jp-i4jb,All Summer Sites - Contact and Program Participation - 2020,summer_contacts,2020,2020,12894,81,ok,,data/raw_v2\summer_contacts\c8jp-i4jb.csv,2026-05-18T18:19:13
+csqa-694h,SFSP Reimbursements - 2022,summer_reimbursements,2022,2022,403,26,ok,,data/raw_v2\summer_reimbursements\csqa-694h.csv,2026-05-18T18:19:14
+cuhf-bpya,SFSP Reimbursements - 2025,summer_reimbursements,2025,2025,289,27,ok,,data/raw_v2\summer_reimbursements\cuhf-bpya.csv,2026-05-18T18:19:14
+dj2r-c9rw,All Summer Sites - Contact and Program Participation - 2025,summer_contacts,2025,2025,4442,81,ok,,data/raw_v2\summer_contacts\dj2r-c9rw.csv,2026-05-18T18:19:16
+fjpc-icjc,SFSP + SSO Meal Counts - 2020,summer_meal_counts,2020,2020,29167,38,ok,,data/raw_v2\summer_meal_counts\fjpc-icjc.csv,2026-05-18T18:19:21
+h87y-vai4,SNP Contact and Program Participation - 2022-2023,snp_contacts,2022-2023,2023,8694,90,ok,,data/raw_v2\snp_contacts\h87y-vai4.csv,2026-05-18T18:19:23
+i674-5yp3,SNP Meal Reimbursements - 2020-2021,snp_reimbursements,2020-2021,2021,36433,48,ok,,data/raw_v2\snp_reimbursements\i674-5yp3.csv,2026-05-18T18:19:27
+i9vs-cqmu,SNP Meal Reimbursements - 2024-2025,snp_reimbursements,2024-2025,2025,87694,49,ok,,data/raw_v2\snp_reimbursements\i9vs-cqmu.csv,2026-05-18T18:19:51
+ihhh-b9xf,All Summer Sites - Meal Count - 2023,summer_meal_counts,2023,2023,9808,37,ok,,data/raw_v2\summer_meal_counts\ihhh-b9xf.csv,2026-05-18T18:19:53
+ixpn-g9tj,All Summer Sites - Contact and Program Participation - 2021,summer_contacts,2021,2021,15756,72,ok,,data/raw_v2\summer_contacts\ixpn-g9tj.csv,2026-05-18T18:20:00
+iyyi-2unc,SSO Reimbursements - 2023,summer_reimbursements,2023,2023,972,26,ok,,data/raw_v2\summer_reimbursements\iyyi-2unc.csv,2026-05-18T18:20:00
+kde6-bnft,SNP Meal Reimbursements - 2023-2024,snp_reimbursements,2023-2024,2024,88116,48,ok,,data/raw_v2\snp_reimbursements\kde6-bnft.csv,2026-05-18T18:20:13
+krb3-22yq,SSO Reimbursements - 2020,summer_reimbursements,2020,2020,3817,25,ok,,data/raw_v2\summer_reimbursements\krb3-22yq.csv,2026-05-18T18:20:14
+kvxp-4a2s,SSO Reimbursements - 2020-2021,summer_reimbursements,2020-2021,2021,6378,25,ok,,data/raw_v2\summer_reimbursements\kvxp-4a2s.csv,2026-05-18T18:20:15
+m6ah-wwj6,All Summer Sites - Contact and Program Participation - 2024,summer_contacts,2024,2024,4934,81,ok,,data/raw_v2\summer_contacts\m6ah-wwj6.csv,2026-05-18T18:20:16
+pjew-sxuw,SFSP Reimbursements - 2020,summer_reimbursements,2020,2020,985,26,ok,,data/raw_v2\summer_reimbursements\pjew-sxuw.csv,2026-05-18T18:20:17
+ram8-hjmh,SFSP + SSO Meal Counts - 2021-2022,summer_meal_counts,2021-2022,2022,76469,38,ok,,data/raw_v2\summer_meal_counts\ram8-hjmh.csv,2026-05-18T18:20:28
+shme-pbr8,SNP Contact and Program Participation - 2021-2022,snp_contacts,2021-2022,2022,8656,91,ok,,data/raw_v2\snp_contacts\shme-pbr8.csv,2026-05-18T18:20:33
+t9bs-zxkh,SNP Meal Reimbursements - 2022-2023,snp_reimbursements,2022-2023,2023,88413,48,ok,,data/raw_v2\snp_reimbursements\t9bs-zxkh.csv,2026-05-18T18:20:45
+ti35-mz6c,SSO Reimbursements - 2021-2022,summer_reimbursements,2021-2022,2022,9500,24,ok,,data/raw_v2\summer_reimbursements\ti35-mz6c.csv,2026-05-18T18:20:45
+u4fj-has6,SSO Reimbursements - 2025,summer_reimbursements,2025,2025,948,26,ok,,data/raw_v2\summer_reimbursements\u4fj-has6.csv,2026-05-18T18:20:46
+w6ij-kxxu,SFSP Reimbursements - 2023,summer_reimbursements,2023,2023,347,27,ok,,data/raw_v2\summer_reimbursements\w6ij-kxxu.csv,2026-05-18T18:20:46
+y6fr-r3cf,SFSP Reimbursements - 2024,summer_reimbursements,2024,2024,309,27,ok,,data/raw_v2\summer_reimbursements\y6fr-r3cf.csv,2026-05-18T18:20:47

@@ -22,7 +22,7 @@ import pandas as pd
 import streamlit as st
 
 
-LOOKUP_CSV = os.path.join("data", "lookup", "ce_site_search_master_enriched_all_nc.csv")
+LOOKUP_CSV = os.path.join("data", "lookup_v2", "ce_site_search_master_v2.csv")
 
 PHONE_SUFFIX_PATTERN = re.compile(r"(\d{7,})\.0(?=\D|$)")
 SPLIT_PATTERN = re.compile(r"[,|]")
@@ -373,6 +373,7 @@ def render_selected_site_panel(df: pd.DataFrame) -> None:
     _render_field_block(row, [
         ("Total Reported Meals", "total_reported_meals"),
         ("Latest Program Year", "latest_program_year"),
+        ("Years Active", "years_active"),
         ("Non-Congregate Status", "non_congregate_status"),
         ("Non-Congregate Source", "non_congregate_source"),
         ("Rural / Urban Status", "rural_urban_status"),
@@ -418,7 +419,7 @@ def main() -> None:
     if not os.path.exists(LOOKUP_CSV):
         st.error(
             f"Lookup file not found at `{LOOKUP_CSV}`. "
-            "Run `python scripts/07_enrich_lookup_with_all_public_non_congregate.py` first."
+            "Run `python scripts/12_build_ce_site_lookup_v2.py` first."
         )
         st.stop()
 
