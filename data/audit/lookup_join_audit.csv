@@ -1,0 +1,9 @@
+source_table,row_count,distinct_ce_id,distinct_site_id,joined_to_meals_count,missing_ce_id,missing_site_id,created_at
+summer_meals_master,95753,1280,2124.0,13798.0,0,0.0,2026-05-17T20:24:57
+reimbursements_master,10238,1108,,,0,,2026-05-17T20:24:57
+summer_contact_7ae2-5muh,12092,1207,1713.0,10145.0,0,0.0,2026-05-17T20:24:57
+snp_contact_5ejx-uftk,8683,1189,413.0,7825.0,0,0.0,2026-05-17T20:24:57
+ce_lookup_master,1378,1378,,,0,,2026-05-17T20:24:57
+site_lookup_master,15855,1378,2369.0,13798.0,0,0.0,2026-05-17T20:24:57
+site_program_flags,8683,1189,413.0,7825.0,0,0.0,2026-05-17T20:24:57
+ce_site_search_master,15855,1378,2369.0,13798.0,0,0.0,2026-05-17T20:24:57

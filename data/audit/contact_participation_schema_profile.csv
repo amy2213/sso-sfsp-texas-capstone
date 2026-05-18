@@ -1,0 +1,172 @@
+dataset_key,column_name,sample_value,null_pct,dtype_inferred
+summer_site_contact_participation_7ae2-5muh,programyear,2021-2022,0.0,str
+summer_site_contact_participation_7ae2-5muh,reporttype,AllSummerSites,0.0,str
+summer_site_contact_participation_7ae2-5muh,program,SFSP,0.0,str
+summer_site_contact_participation_7ae2-5muh,ceid,00524,0.0,str
+summer_site_contact_participation_7ae2-5muh,cename,KATY ISD,0.0,str
+summer_site_contact_participation_7ae2-5muh,typeofagency,Educational Institution,0.0,str
+summer_site_contact_participation_7ae2-5muh,typeoforg,School Food Authority,0.0,str
+summer_site_contact_participation_7ae2-5muh,esc,4,0.0,str
+summer_site_contact_participation_7ae2-5muh,tdaregion,3,0.0,str
+summer_site_contact_participation_7ae2-5muh,cestatus,Active,0.0,str
+summer_site_contact_participation_7ae2-5muh,ceapplicationcycle,RENEWAL,0.0,str
+summer_site_contact_participation_7ae2-5muh,siteid,0055,0.0,str
+summer_site_contact_participation_7ae2-5muh,sitename,STOCKDICK J H,0.0,str
+summer_site_contact_participation_7ae2-5muh,sitestatus,ACTIVE,0.0,str
+summer_site_contact_participation_7ae2-5muh,countydistrictcode,101-914,8.11,str
+summer_site_contact_participation_7ae2-5muh,cecounty,HARRIS,0.0,str
+summer_site_contact_participation_7ae2-5muh,sitecounty,HARRIS,0.0,str
+summer_site_contact_participation_7ae2-5muh,cestreetaddressline1,5364 Franz Road,0.0,str
+summer_site_contact_participation_7ae2-5muh,cestreetaddresscity,KATY,0.0,str
+summer_site_contact_participation_7ae2-5muh,cestreetaddressstate,TX,0.0,str
+summer_site_contact_participation_7ae2-5muh,cestreetaddresszipcode,77493,0.0,str
+summer_site_contact_participation_7ae2-5muh,cemailingaddressline1,5364 Franz Road,0.0,str
+summer_site_contact_participation_7ae2-5muh,cemailingaddresscity,KATY,0.0,str
+summer_site_contact_participation_7ae2-5muh,cemailingaddressstate,TX,0.0,str
+summer_site_contact_participation_7ae2-5muh,cemailingaddresszipcode,77493,0.0,str
+summer_site_contact_participation_7ae2-5muh,sitestreetaddressline1,4777 Peek Rd,0.0,str
+summer_site_contact_participation_7ae2-5muh,sitestreetaddresscity,Katy,0.0,str
+summer_site_contact_participation_7ae2-5muh,sitestreetaddressstate,TX,0.0,str
+summer_site_contact_participation_7ae2-5muh,sitestreetaddresszipcode,77493,0.0,str
+summer_site_contact_participation_7ae2-5muh,progradministratorsalutation,Mrs.,0.97,str
+summer_site_contact_participation_7ae2-5muh,progradministratorfirstname,Donna,0.0,str
+summer_site_contact_participation_7ae2-5muh,progradministratorlastname,Pittenger,0.0,str
+summer_site_contact_participation_7ae2-5muh,progradministratortitlep,Executive Director,0.0,str
+summer_site_contact_participation_7ae2-5muh,progradministratoremail,donnapittenger@katyisd.org,0.0,str
+summer_site_contact_participation_7ae2-5muh,progradministratorphone,2813966240,0.0,str
+summer_site_contact_participation_7ae2-5muh,progrcoordinatorsalutation,Mrs.,6.07,str
+summer_site_contact_participation_7ae2-5muh,progrcoordinatorfirstname,Dagmara,0.0,str
+summer_site_contact_participation_7ae2-5muh,progrcoordinatorlastname,Gujda,0.0,str
+summer_site_contact_participation_7ae2-5muh,progrcoordinatortitleposition,Associate Director,0.0,str
+summer_site_contact_participation_7ae2-5muh,progrcoordinatoremail,dagmarapgujda@katyisd.org,0.0,str
+summer_site_contact_participation_7ae2-5muh,progrcoordinatorphone,2813966240,0.0,str
+summer_site_contact_participation_7ae2-5muh,sitecontactsalutation,Ms.,37.13,str
+summer_site_contact_participation_7ae2-5muh,sitecontactfirstname,Gabby,0.0,str
+summer_site_contact_participation_7ae2-5muh,sitecontactlastname,Sauceda,0.0,str
+summer_site_contact_participation_7ae2-5muh,sitecontacttitleposition,manager,0.0,str
+summer_site_contact_participation_7ae2-5muh,sitecontactemail,gabrielasauceda@katyisd.org,3.23,str
+summer_site_contact_participation_7ae2-5muh,sitecontactphone,2812342836,0.0,str
+summer_site_contact_participation_7ae2-5muh,sitetype,Open,0.0,str
+summer_site_contact_participation_7ae2-5muh,sitestartdate,2022-06-06T00:00:00.000,0.0,str
+summer_site_contact_participation_7ae2-5muh,siteenddate,2022-07-21T00:00:00.000,0.0,str
+summer_site_contact_participation_7ae2-5muh,daysofoperation,"M,T,W,TH",0.0,str
+summer_site_contact_participation_7ae2-5muh,mealtypesserved,Lunch,0.0,str
+summer_site_contact_participation_7ae2-5muh,lunchtime,9:30 - 12:15,1.87,str
+summer_site_contact_participation_7ae2-5muh,lunchdaysserved,"M, T, W, TH",1.87,str
+summer_site_contact_participation_7ae2-5muh,operationstartdate,2022-05-31T00:00:00.000,0.0,str
+summer_site_contact_participation_7ae2-5muh,operationenddate,2022-07-28T00:00:00.000,0.0,str
+summer_site_contact_participation_7ae2-5muh,geolocation,"{'type': 'Point', 'coordinates': [-95.773715564, 29.849569097]}",0.0,object
+summer_site_contact_participation_7ae2-5muh,oct_may_claims,N,0.0,str
+summer_site_contact_participation_7ae2-5muh,jun_aug_claims,Y,0.0,str
+summer_site_contact_participation_7ae2-5muh,computed_region_de3d_j5mj,16,0.03,str
+summer_site_contact_participation_7ae2-5muh,computed_region_ji3u_dqif,8,0.0,str
+summer_site_contact_participation_7ae2-5muh,computed_region_rk7b_wvzt,7,0.0,str
+summer_site_contact_participation_7ae2-5muh,computed_region_ptpy_sh92,132,0.0,str
+summer_site_contact_participation_7ae2-5muh,computed_region_59h5_km5p,121,0.04,str
+summer_site_contact_participation_7ae2-5muh,breakfasttime,7:20 AM - 7:55 AM,8.96,str
+summer_site_contact_participation_7ae2-5muh,breakfastdaysserved,"M, T, W, TH, F",8.96,str
+summer_site_contact_participation_7ae2-5muh,suppertime,4:30 PM - 6:30 PM,99.16,str
+summer_site_contact_participation_7ae2-5muh,supperdaysserved,"M, T, W, TH, F",99.16,str
+summer_site_contact_participation_7ae2-5muh,pmsnacktime,2:00 PM - 3:00 PM,96.25,str
+summer_site_contact_participation_7ae2-5muh,pmsnackdaysserved,"M, T, W, TH",96.25,str
+summer_site_contact_participation_7ae2-5muh,sitestreetaddressline2,ATTN KITCHEN,93.13,str
+summer_site_contact_participation_7ae2-5muh,siteterminationstatus,Contracting Entity Closed,97.48,str
+summer_site_contact_participation_7ae2-5muh,siteterminatedasofdate,2022-05-27T00:00:00.000,97.48,str
+summer_site_contact_participation_7ae2-5muh,cemailingaddressline2,Professional Building C Room 101B,93.83,str
+summer_site_contact_participation_7ae2-5muh,cestreetaddressline2,109 N. Ave. C,92.34,str
+summer_site_contact_participation_7ae2-5muh,amsnacktime,8:30 - 9:30,99.75,str
+summer_site_contact_participation_7ae2-5muh,amsnackdaysserved,"M, T, W, TH",99.75,str
+summer_site_contact_participation_7ae2-5muh,ceterminationstatus,Self Cancelled,99.88,str
+summer_site_contact_participation_7ae2-5muh,ceterminatedasofdate,2022-03-01T00:00:00.000,99.88,str
+snp_site_contact_participation_5ejx-uftk,odprecid,00106-0909,0.0,str
+snp_site_contact_participation_5ejx-uftk,programyear,2024-2025,0.0,str
+snp_site_contact_participation_5ejx-uftk,reporttype,SCHOOLNUTRITIONPROGRAMCONTACTS,0.0,str
+snp_site_contact_participation_5ejx-uftk,ceid,00106,0.0,str
+snp_site_contact_participation_5ejx-uftk,cename,TEXARKANA ISD,0.0,str
+snp_site_contact_participation_5ejx-uftk,typeofagency,Educational Institution,0.0,str
+snp_site_contact_participation_5ejx-uftk,typeoforg,Public,0.0,str
+snp_site_contact_participation_5ejx-uftk,esc,8,0.0,str
+snp_site_contact_participation_5ejx-uftk,tdaregion,2,0.0,str
+snp_site_contact_participation_5ejx-uftk,cestatus,ACTIVE,0.0,str
+snp_site_contact_participation_5ejx-uftk,ceapplicationcycle,RENEWAL,0.0,str
+snp_site_contact_participation_5ejx-uftk,siteid,0909,0.0,str
+snp_site_contact_participation_5ejx-uftk,sitename,REDWATER INT,0.0,str
+snp_site_contact_participation_5ejx-uftk,covidmealsite,False,0.0,bool
+snp_site_contact_participation_5ejx-uftk,sitestatus,ACTIVE,0.0,str
+snp_site_contact_participation_5ejx-uftk,siteapplicationcycle,RENEWAL,0.0,str
+snp_site_contact_participation_5ejx-uftk,countydistrictcode,019-907,0.26,str
+snp_site_contact_participation_5ejx-uftk,cecounty,BOWIE,0.0,str
+snp_site_contact_participation_5ejx-uftk,sitecounty,BOWIE,0.0,str
+snp_site_contact_participation_5ejx-uftk,cestreetaddressline1,4241 SUMMERHILL RD,0.0,str
+snp_site_contact_participation_5ejx-uftk,cestreetaddresscity,TEXARKANA,0.0,str
+snp_site_contact_participation_5ejx-uftk,cestreetaddressstate,TX,0.0,str
+snp_site_contact_participation_5ejx-uftk,cestreetaddresszipcode,75503-2733,0.0,str
+snp_site_contact_participation_5ejx-uftk,cemailingaddressline1,4241 SUMMERHILL RD,0.0,str
+snp_site_contact_participation_5ejx-uftk,cemailingaddresscity,TEXARKANA,0.0,str
+snp_site_contact_participation_5ejx-uftk,cemailingaddressstate,TX,0.0,str
+snp_site_contact_participation_5ejx-uftk,cemailingaddresszipcode,75503-2733,0.0,str
+snp_site_contact_participation_5ejx-uftk,sitestreetaddressline1,P.O. Box 347,0.0,str
+snp_site_contact_participation_5ejx-uftk,sitestreetaddresscity,Redwater,0.0,str
+snp_site_contact_participation_5ejx-uftk,sitestreetaddressstate,TX,0.0,str
+snp_site_contact_participation_5ejx-uftk,sitestreetaddresszipcode,75573-0347,0.0,str
+snp_site_contact_participation_5ejx-uftk,superintendentsalutation,DR,3.59,str
+snp_site_contact_participation_5ejx-uftk,superintendentfirstname,Doug,0.0,str
+snp_site_contact_participation_5ejx-uftk,superintendentlastname,Brubaker,0.0,str
+snp_site_contact_participation_5ejx-uftk,superintendenttitleposition,Superintendent,0.0,str
+snp_site_contact_participation_5ejx-uftk,superintendentemail,doug.brubaker@txkisd.net,0.0,str
+snp_site_contact_participation_5ejx-uftk,superintendentphone,9037943651,0.0,str
+snp_site_contact_participation_5ejx-uftk,childnutdirsalutation,MR,1.24,str
+snp_site_contact_participation_5ejx-uftk,childnutdirfirstname,Shawn,0.0,str
+snp_site_contact_participation_5ejx-uftk,childnutdirlastname,Davis,0.0,str
+snp_site_contact_participation_5ejx-uftk,childnutdirtitleposition,Director of Child Nutrition Programs,0.0,str
+snp_site_contact_participation_5ejx-uftk,childnutdiremail,shawn.davis@txkisd.net,0.0,str
+snp_site_contact_participation_5ejx-uftk,childnutdirphone,9037922231,0.0,str
+snp_site_contact_participation_5ejx-uftk,managedbyfsmc,N,0.0,str
+snp_site_contact_participation_5ejx-uftk,mealspurchasedfromsfa,N,0.0,str
+snp_site_contact_participation_5ejx-uftk,mealspurchasedfromvendorotherthansfa,N,0.0,str
+snp_site_contact_participation_5ejx-uftk,vendmealstosfa,N,0.0,str
+snp_site_contact_participation_5ejx-uftk,schoolbreakfastprogram,Y,0.0,str
+snp_site_contact_participation_5ejx-uftk,nationalschoollunchprogram,Y,0.0,str
+snp_site_contact_participation_5ejx-uftk,afterschoolcareprogram,N,0.0,str
+snp_site_contact_participation_5ejx-uftk,specialmilkprogram,N,0.0,str
+snp_site_contact_participation_5ejx-uftk,ffvpapproved,N,0.0,str
+snp_site_contact_participation_5ejx-uftk,severeneedbreakfast,Y,0.0,str
+snp_site_contact_participation_5ejx-uftk,universalfreebreakfast,N,0.0,str
+snp_site_contact_participation_5ejx-uftk,areaeligiblesnack,N,0.0,str
+snp_site_contact_participation_5ejx-uftk,siteisp,44.76,1.7,str
+snp_site_contact_participation_5ejx-uftk,cep,N,0.0,str
+snp_site_contact_participation_5ejx-uftk,provision2,N,0.0,str
+snp_site_contact_participation_5ejx-uftk,breakfastpricing,Pricing,0.1,str
+snp_site_contact_participation_5ejx-uftk,lunchpricing,Pricing,0.74,str
+snp_site_contact_participation_5ejx-uftk,grade4,Y,45.02,str
+snp_site_contact_participation_5ejx-uftk,grade5,Y,47.4,str
+snp_site_contact_participation_5ejx-uftk,grade6,Y,68.78,str
+snp_site_contact_participation_5ejx-uftk,operationstartdate,2024-08-05T00:00:00.000,0.0,str
+snp_site_contact_participation_5ejx-uftk,operationenddate,2025-05-23T00:00:00.000,0.0,str
+snp_site_contact_participation_5ejx-uftk,grade7,Y,71.67,str
+snp_site_contact_participation_5ejx-uftk,grade8,Y,71.75,str
+snp_site_contact_participation_5ejx-uftk,grade9,Y,75.33,str
+snp_site_contact_participation_5ejx-uftk,grade10,Y,75.73,str
+snp_site_contact_participation_5ejx-uftk,grade11,Y,76.05,str
+snp_site_contact_participation_5ejx-uftk,grade12,Y,76.36,str
+snp_site_contact_participation_5ejx-uftk,geolocation,"{'type': 'Point', 'coordinates': [-98.24104, 34.02364]}",2.48,object
+snp_site_contact_participation_5ejx-uftk,computed_region_ptpy_sh92,69,2.48,str
+snp_site_contact_participation_5ejx-uftk,computed_region_59h5_km5p,97,2.55,str
+snp_site_contact_participation_5ejx-uftk,computed_region_de3d_j5mj,16,2.53,str
+snp_site_contact_participation_5ejx-uftk,computed_region_ji3u_dqif,13,2.48,str
+snp_site_contact_participation_5ejx-uftk,computed_region_rk7b_wvzt,30,2.48,str
+snp_site_contact_participation_5ejx-uftk,sitestreetaddressline2,Suite 300,95.37,str
+snp_site_contact_participation_5ejx-uftk,gradeprek,Y,55.93,str
+snp_site_contact_participation_5ejx-uftk,gradekinder,Y,46.16,str
+snp_site_contact_participation_5ejx-uftk,grade1,Y,45.12,str
+snp_site_contact_participation_5ejx-uftk,grade2,Y,45.08,str
+snp_site_contact_participation_5ejx-uftk,grade3,Y,45.03,str
+snp_site_contact_participation_5ejx-uftk,snackpricing,Non-Pricing,80.54,str
+snp_site_contact_participation_5ejx-uftk,gradeheadstart,Y,95.0,str
+snp_site_contact_participation_5ejx-uftk,siteterminationstatus,Self Cancelled,99.54,str
+snp_site_contact_participation_5ejx-uftk,siteterminatedasofdate,2024-08-12T00:00:00.000,99.54,str
+snp_site_contact_participation_5ejx-uftk,gradeearlyeducation,Y,93.61,str
+snp_site_contact_participation_5ejx-uftk,cemailingaddressline2,"RISD Support Center, Child Nutrition Office, A116",97.33,str
+snp_site_contact_participation_5ejx-uftk,cestreetaddressline2,PO BOX 1475,97.51,str
+snp_site_contact_participation_5ejx-uftk,ceterminationstatus,TDA Cancelled,99.86,str
+snp_site_contact_participation_5ejx-uftk,ceterminatedasofdate,2024-07-01T00:00:00.000,99.86,str
