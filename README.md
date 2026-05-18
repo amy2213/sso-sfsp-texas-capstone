@@ -5,6 +5,8 @@ Option (SSO)** and the **Summer Food Service Program (SFSP)** in Texas,
 using public datasets published by the Texas Department of Agriculture
 on the Texas Open Data Portal (`data.texas.gov`).
 
+https://app-sfsp-texas.streamlit.app/
+
 The repository currently contains:
 
 1. A reproducible ingest / cleaning / audit pipeline for the underlying
