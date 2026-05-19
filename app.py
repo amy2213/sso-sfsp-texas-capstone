@@ -259,26 +259,38 @@ def _build_selectbox_options(df: pd.DataFrame):
     """Build a list of (display_label, dataframe_index) tuples for the
     selected-site selectbox. Labels follow the spec format
     `CEID | CE Name | SiteID | Site Name | Latest Year` and are made
-    unique by appending the dataframe row index when collisions occur."""
-    base_labels = []
-    for _, row in df.iterrows():
-        base_labels.append(" | ".join([
-            display_value(row.get("ce_id")),
-            display_value(row.get("ce_name")),
-            display_value(row.get("site_id")),
-            display_value(row.get("site_name")),
-            display_value(row.get("latest_program_year")),
-        ]))
+    unique by appending the dataframe row index when collisions occur.
 
-    seen = {}
+    Implementation note: vectorized via pandas string ops to handle
+    25k+ rows quickly. Per-row iteration is reserved for the dedup
+    pass, which only does dict lookups."""
+    def col_as_str(name: str) -> pd.Series:
+        if name not in df.columns:
+            return pd.Series(["—"] * len(df), index=df.index, dtype="object")
+        s = df[name].astype("object")
+        s = s.where(s.notna(), "—")
+        s = s.astype(str).str.strip()
+        s = s.where(~s.isin(["", "nan", "<NA>", "None"]), "—")
+        return s
+
+    parts = [col_as_str(c) for c in (
+        "ce_id", "ce_name", "site_id", "site_name", "latest_program_year"
+    )]
+    base = parts[0]
+    for p in parts[1:]:
+        base = base + " | " + p
+    base_labels = base.tolist()
+    indices = df.index.tolist()
+
+    seen = set()
     unique_labels = []
-    for label, idx in zip(base_labels, df.index):
+    for label, idx in zip(base_labels, indices):
         if label in seen:
             unique_labels.append(f"{label}  [row {idx}]")
         else:
-            seen[label] = True
+            seen.add(label)
             unique_labels.append(label)
-    return list(zip(unique_labels, df.index.tolist()))
+    return list(zip(unique_labels, indices))
 
 
 def _render_field_block(row: pd.Series, fields) -> None:

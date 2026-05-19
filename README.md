@@ -31,7 +31,7 @@ The repository currently contains:
 > the available public data tell us about how the two programs serve
 > different populations and operate at different scales?
 
-## Two caveats to read first
+## Caveats to read first
 
 **Reported meals are not unique children served.** A child receiving
 breakfast and lunch on the same day counts as two reported meals. All
@@ -47,6 +47,16 @@ window stays marked **Unknown**, and `Unknown` explicitly does *not*
 mean the site was congregate — it means no public-source field exists
 for that site/year.
 
+**2020–2022 SSO scale reflects COVID-era waivers, not normal summer
+operations.** Under USDA's pandemic waivers, SSO could operate
+year-round in many districts (effectively replacing NSLP/SBP service
+in 2020–21 and parts of 2021–22), so reported-meal and reimbursement
+totals for those program years are *all-year* SSO operations rather
+than the normal June–August summer-only window. Direct comparisons of
+SSO 2020/2021/2022 to SSO 2023+ — or to typical pre-pandemic summer
+SSO — should be qualified accordingly. The 2023+ datasets return to
+something closer to a normal summer-only footprint.
+
 ## Tools
 
 - **Python 3** (pandas, sodapy, requests) for ingest, cleaning,
@@ -60,11 +70,30 @@ for that site/year.
 - **Texas Open Data Portal** (Socrata API + Discovery API) as the data
   source.
 
+## Data sources
+
+The v2 registry ([config/tda_5yr_dataset_registry.json](config/tda_5yr_dataset_registry.json))
+declares **37 entries (36 unique dataset IDs**; `24ie-9cft` is
+cross-listed in both summer_contacts and non_congregate_sources)
+across six categories:
+
+| Category | Count | Period covered |
+|---|---:|---|
+| `summer_meal_counts` (combined SFSP+SSO per period) | 6 | 2020 → 2025 |
+| `summer_reimbursements` (separate SSO + SFSP per period) | 12 | 2020 → 2025 |
+| `summer_contacts` (All Summer Sites per period) | 6 | 2020 → 2025 |
+| `snp_contacts` (per school year) | 5 | 2020-21 → 2024-25 |
+| `snp_reimbursements` (per school year) | 5 | 2020-21 → 2024-25 |
+| `non_congregate_sources` (MealServiceType-bearing) | 3 | 2022-2023 only |
+
 ## Pipeline
 
 The pipeline is organized as twelve numbered scripts. Scripts 01–08
 are the original v1 pipeline kept for provenance; scripts 09–12 are
-the active v2 pipeline that the deployed Streamlit app uses.
+the active v2 pipeline that the deployed Streamlit app uses. A
+convenience wrapper
+([scripts/run_v2_pipeline.py](scripts/run_v2_pipeline.py)) runs
+09 → 10 → 11 → 12 in order and stops on failure.
 
 ### v2 pipeline (active — feeds the dashboard)
 
@@ -116,14 +145,12 @@ the active v2 pipeline that the deployed Streamlit app uses.
 
 ```powershell
 # from the repo root
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 
-# (re)build the v2 pipeline end-to-end — this is what the dashboard reads
-python scripts\09_build_5yr_dataset_registry.py
-python scripts\10_ingest_5yr_tda_datasets.py
-python scripts\11_build_5yr_canonical_tables.py
-python scripts\12_build_ce_site_lookup_v2.py
+# rebuild the v2 pipeline end-to-end (wrapper runs 09 -> 10 -> 11 -> 12)
+python scripts\run_v2_pipeline.py
 
 # launch the dashboard
 streamlit run app.py
@@ -132,6 +159,26 @@ streamlit run app.py
 The v1 scripts (01–08) are still runnable for historical comparison
 or to regenerate the v1 lookup chain, but the dashboard does not
 depend on them.
+
+### Output files the app reads
+
+- [data/lookup_v2/ce_site_search_master_v2.csv](data/lookup_v2/ce_site_search_master_v2.csv)
+  — what `app.py` actually loads.
+- [data/clean_v2/](data/clean_v2/) — five canonical 5-year masters
+  (summer meals, summer reimbursements, summer contacts, SNP contacts,
+  SNP reimbursements).
+- [data/audit/tda_5yr_pipeline_validation_report.md](data/audit/tda_5yr_pipeline_validation_report.md)
+  — single-page summary of fetch status, row counts by category, and
+  NC scope.
+
+### Data size note
+
+Clean and lookup CSVs are committed for demo / reproducibility (so a
+clone of the repo can run the dashboard without re-fetching from
+Socrata). The raw fetches in `data/raw_v2/` are also committed once
+(~234 MB) and then gitignored so re-running `scripts/10_*` doesn't
+produce noisy diffs. All committed outputs can be fully regenerated
+by running `scripts/run_v2_pipeline.py`.
 
 ## Streamlit CE/Site Lookup Dashboard
 

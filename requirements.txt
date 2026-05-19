@@ -1,7 +1,7 @@
-pandas
-sodapy
-openpyxl
-requests
-sqlalchemy
-psycopg2-binary
-streamlit
+pandas==3.0.3
+sodapy==2.2.0
+openpyxl==3.1.5
+requests==2.34.0
+sqlalchemy==2.0.49
+psycopg2-binary==2.9.12
+streamlit==1.57.0
