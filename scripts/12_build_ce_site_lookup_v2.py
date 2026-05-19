@@ -197,7 +197,60 @@ def load_csv_with_ids(path: str) -> pd.DataFrame:
         df["total_meals"] = pd.to_numeric(df["total_meals"], errors="coerce")
     if "total_reimbursement" in df.columns:
         df["total_reimbursement"] = pd.to_numeric(df["total_reimbursement"], errors="coerce")
+    if "nc_from_site_name" in df.columns:
+        # CSV round-trip turns booleans into strings; coerce back.
+        df["nc_from_site_name"] = (
+            df["nc_from_site_name"].astype(str).str.strip().str.lower()
+            .isin({"true", "1", "yes"})
+        )
     return df
+
+
+# --------------------------------------------------------------------
+# NC-from-name aggregation across all three canonical sources
+# --------------------------------------------------------------------
+
+def aggregate_nc_from_name(*sources: pd.DataFrame) -> pd.DataFrame:
+    """For each (ce_id, site_id), find the union of canonical_years
+    across the provided canonical tables where nc_from_site_name was
+    True. Returns one row per (ce_id, site_id) that had NC_ in ANY year,
+    with `nc_flag_from_name=True` and `nc_name_years` as a sorted
+    comma-joined year list."""
+    parts = []
+    for src in sources:
+        if src is None or src.empty:
+            continue
+        if "nc_from_site_name" not in src.columns:
+            continue
+        flag = src["nc_from_site_name"]
+        if flag.dtype != bool:
+            flag = (
+                flag.astype(str).str.strip().str.lower()
+                .isin({"true", "1", "yes"})
+            )
+        sub = src.loc[
+            flag.fillna(False) & src["ce_id"].notna() & src["site_id"].notna(),
+            ["ce_id", "site_id", "canonical_year"],
+        ].copy()
+        if not sub.empty:
+            parts.append(sub)
+
+    if not parts:
+        return pd.DataFrame(columns=["ce_id", "site_id", "nc_flag_from_name", "nc_name_years"])
+
+    all_nc = pd.concat(parts, ignore_index=True)
+
+    def _years_join(s):
+        years = sorted({int(v) for v in s.dropna()})
+        return ", ".join(str(y) for y in years) if years else pd.NA
+
+    out = (
+        all_nc.groupby(["ce_id", "site_id"], dropna=False)
+        .agg(nc_name_years=("canonical_year", _years_join))
+        .reset_index()
+    )
+    out["nc_flag_from_name"] = True
+    return out[["ce_id", "site_id", "nc_flag_from_name", "nc_name_years"]]
 
 
 # --------------------------------------------------------------------
@@ -213,6 +266,7 @@ def summarize_meals_by_site(meals: pd.DataFrame) -> pd.DataFrame:
         program_types_observed=("program_type", unique_joined),
         ce_name_from_meals=("ce_name", first_non_null),
         site_name_from_meals=("site_name", first_non_null),
+        site_name_base_from_meals=("site_name_base", first_non_null),
         ce_county_from_meals=("ce_county", first_non_null),
         site_county_from_meals=("site_county", first_non_null),
         region_from_meals=("region", first_non_null),
@@ -356,6 +410,7 @@ def build_site_lookup(
     meals_site_summary: pd.DataFrame,
     snp_reimb: pd.DataFrame,
     nc: pd.DataFrame,
+    nc_name_agg: pd.DataFrame,
 ) -> pd.DataFrame:
     # Universe: union of (ce_id, site_id) across summer-contacts, snp-contacts,
     # meals, and snp-reimbursements (since SNP reimb has site_id and may add sites).
@@ -375,6 +430,7 @@ def build_site_lookup(
         .merge(n, on=["ce_id", "site_id"], how="left")
         .merge(meals_site_summary, on=["ce_id", "site_id"], how="left")
         .merge(nc, on=["ce_id", "site_id"], how="left", indicator="_nc_merge")
+        .merge(nc_name_agg, on=["ce_id", "site_id"], how="left")
     )
 
     out = pd.DataFrame({"ce_id": merged["ce_id"], "site_id": merged["site_id"]})
@@ -394,7 +450,7 @@ def build_site_lookup(
         "ce_street_address_line_1", "ce_street_address_line_2",
         "ce_city", "ce_state", "ce_zip",
         "ce_county", "region",
-        "site_name", "site_county",
+        "site_name", "site_name_base", "site_county",
         "site_street_address_line_1", "site_street_address_line_2",
         "site_city", "site_state", "site_zip",
         "type_of_agency", "type_of_org",
@@ -433,6 +489,7 @@ def build_site_lookup(
     # Fallbacks from meals
     out["ce_name"] = out["ce_name"].combine_first(merged.get("ce_name_from_meals", pd.Series([pd.NA] * len(out))))
     out["site_name"] = out["site_name"].combine_first(merged.get("site_name_from_meals", pd.Series([pd.NA] * len(out))))
+    out["site_name_base"] = out["site_name_base"].combine_first(merged.get("site_name_base_from_meals", pd.Series([pd.NA] * len(out))))
     out["site_county"] = out["site_county"].combine_first(merged.get("site_county_from_meals", pd.Series([pd.NA] * len(out))))
     out["region"] = out["region"].combine_first(merged.get("region_from_meals", pd.Series([pd.NA] * len(out))))
 
@@ -442,8 +499,7 @@ def build_site_lookup(
     out["latest_program_year"] = pd.to_numeric(merged.get("latest_program_year"), errors="coerce").astype("Int64")
     out["program_types_observed"] = merged.get("program_types_observed")
 
-    # NC enrichment fields
-    matched_mask = merged["_nc_merge"] == "both"
+    # NC enrichment fields (MealServiceType-based)
     out["source_dataset_ids"] = merged.get("source_dataset_ids")
     out["source_labels"] = merged.get("source_labels")
     out["program_years_verified"] = merged.get("program_years_verified")
@@ -452,12 +508,50 @@ def build_site_lookup(
     out["sfsp_site_type_public"] = merged.get("sfsp_site_type_public")
     out["meal_service_methods_summary"] = merged.get("meal_service_methods_summary")
 
+    # NC-from-name fields (aggregated across all canonical sources)
+    out["nc_flag_from_name"] = merged.get(
+        "nc_flag_from_name", pd.Series([pd.NA] * len(merged))
+    ).fillna(False).astype(bool)
+    out["nc_name_years"] = merged.get("nc_name_years", pd.Series([pd.NA] * len(merged)))
+
+    # Composite non-congregate status. Priority:
+    #   1. MealServiceType says a specific Non-Congregate subtype  (most specific)
+    #   2. site name begins with NC_                                (from name)
+    #   3. MealServiceType says Congregate
+    #   4. Unknown
+    mst_status = merged.get("non_congregate_status_verified", pd.Series([pd.NA] * len(merged)))
+    mst_status_str = mst_status.astype("string").fillna("")
+    mst_specific_nc = mst_status_str.str.contains("Non-Congregate", na=False)
+    mst_congregate = mst_status_str.str.strip() == "Congregate"
+    name_nc = out["nc_flag_from_name"].fillna(False).astype(bool)
+
     out["non_congregate_status"] = "Unknown"
-    out.loc[matched_mask, "non_congregate_status"] = (
-        merged.loc[matched_mask, "non_congregate_status_verified"].apply(fix_replacement_char)
+    out.loc[mst_congregate, "non_congregate_status"] = "Congregate"
+    out.loc[name_nc, "non_congregate_status"] = "Non-Congregate (from site name)"
+    out.loc[mst_specific_nc, "non_congregate_status"] = (
+        mst_status[mst_specific_nc].apply(fix_replacement_char)
     )
-    out["non_congregate_source"] = UNKNOWN_NC_SOURCE
-    out.loc[matched_mask, "non_congregate_source"] = NC_SOURCE_LABEL
+
+    # Composite source string. Order mirrors the status priority above.
+    MST_SOURCE = "MealServiceType (8ih4-zp65, 24ie-9cft, 82b8-iuvu)"
+    NAME_SOURCE = "site name NC_ prefix"
+    BOTH_SOURCE = "MealServiceType + site name NC_ prefix"
+
+    def _compose_source(mst_nc, mst_cong, name_only):
+        if mst_nc and name_only:
+            return BOTH_SOURCE
+        if mst_nc:
+            return MST_SOURCE
+        if name_only:
+            return NAME_SOURCE
+        if mst_cong:
+            return MST_SOURCE
+        return UNKNOWN_NC_SOURCE
+
+    out["non_congregate_source"] = [
+        _compose_source(a, b, c)
+        for a, b, c in zip(mst_specific_nc.tolist(), mst_congregate.tolist(), name_nc.tolist())
+    ]
 
     out["rural_urban_source"] = out["rural_urban_status"].apply(
         lambda v: RU_SOURCE_LABEL if not is_blank(v) else pd.NA
@@ -739,7 +833,7 @@ def build_search_master(site_lookup: pd.DataFrame, ce_lookup: pd.DataFrame) -> p
     base["search_key"] = base.apply(make_search_key, axis=1)
 
     spec_cols = [
-        "search_key", "ce_id", "ce_name", "site_id", "site_name",
+        "search_key", "ce_id", "ce_name", "site_id", "site_name", "site_name_base",
         "site_address_full", "ce_address_full",
         "site_contact_summary", "ce_contact_summary",
         "program_types_observed", "site_type",
@@ -748,6 +842,7 @@ def build_search_master(site_lookup: pd.DataFrame, ce_lookup: pd.DataFrame) -> p
         "total_reported_meals", "latest_program_year", "years_active",
         "snp_flags_summary", "eligibility_indicators_summary",
         "non_congregate_status", "non_congregate_source",
+        "nc_flag_from_name", "nc_name_years",
         "meal_service_type_public", "rural_urban_status", "rural_urban_source",
         "sfsp_site_type_public", "meal_service_methods_summary",
         "source_dataset_ids", "source_labels", "program_years_verified",
@@ -868,8 +963,64 @@ def write_validation_report(meals: pd.DataFrame, reimb: pd.DataFrame,
     md.append(f"\nTotal sites with verified NC source match: **{int((search_master['non_congregate_status'].astype(str).str.strip() != 'Unknown').sum()):,}**\n")
     md.append(f"Total confirmed non-congregate sites: **{int(search_master['non_congregate_status'].astype(str).str.contains('Non-Congregate', na=False).sum()):,}**\n")
 
-    md.append("\n## Known limitations\n")
-    md.append("- Verified non-congregate status is available only where public TX Open Data includes meal service type, currently limited to the 2022–2023 contact datasets. Unknown does not mean congregate.\n")
+    # --- NC-from-name diagnostics ---
+    md.append("\n## NC_ prefix detection (site_name)\n")
+    if "nc_flag_from_name" in search_master.columns:
+        name_nc_mask = search_master["nc_flag_from_name"].fillna(False).astype(bool)
+        name_nc_count = int(name_nc_mask.sum())
+        md.append(f"Distinct (ce_id, site_id) keys with NC_ prefix in ANY year: **{name_nc_count:,}**\n\n")
+
+        # Year-by-year prefix appearances aggregated across canonical sources
+        per_year_counts = {}
+        for src_name, src in [
+            ("summer_meal_counts", meals),
+            ("summer_contacts", summer_contacts),
+            ("snp_contacts", snp_contacts),
+        ]:
+            if src is None or src.empty or "nc_from_site_name" not in src.columns:
+                continue
+            flag = src["nc_from_site_name"]
+            if flag.dtype != bool:
+                flag = (
+                    flag.astype(str).str.strip().str.lower()
+                    .isin({"true", "1", "yes"})
+                )
+            year_counts = (
+                src.loc[flag.fillna(False), "canonical_year"]
+                .dropna().astype(int).value_counts().sort_index()
+            )
+            per_year_counts[src_name] = year_counts
+
+        if per_year_counts:
+            years = sorted({y for s in per_year_counts.values() for y in s.index})
+            md.append("| Year | summer_meal_counts | summer_contacts | snp_contacts |\n|---|---:|---:|---:|\n")
+            for y in years:
+                mc = int(per_year_counts.get("summer_meal_counts", {}).get(y, 0))
+                sc = int(per_year_counts.get("summer_contacts", {}).get(y, 0))
+                snc = int(per_year_counts.get("snp_contacts", {}).get(y, 0))
+                md.append(f"| {y} | {mc:,} | {sc:,} | {snc:,} |\n")
+            md.append("\n")
+
+        # Overlap with MealServiceType-derived NC
+        mst_nc_mask = search_master["non_congregate_status"].astype(str).str.contains("Non-Congregate", na=False)
+        # mst-specific NC sites are those whose status was set from the MealServiceType
+        # field rather than from the site name. Approximation: source string contains "MealServiceType".
+        if "non_congregate_source" in search_master.columns:
+            mst_source_mask = (
+                search_master["non_congregate_source"].astype(str)
+                .str.contains("MealServiceType", na=False)
+            )
+            overlap_count = int((name_nc_mask & mst_source_mask).sum())
+            mst_only_count = int((mst_source_mask & ~name_nc_mask & mst_nc_mask).sum())
+            name_only_count = int((name_nc_mask & ~mst_source_mask).sum())
+            md.append("### Overlap with MealServiceType-derived NC\n")
+            md.append("| Detection | Sites |\n|---|---:|\n")
+            md.append(f"| MealServiceType non-congregate AND NC_ prefix (both signals agree) | {overlap_count:,} |\n")
+            md.append(f"| MealServiceType non-congregate only | {mst_only_count:,} |\n")
+            md.append(f"| NC_ prefix only | {name_only_count:,} |\n\n")
+
+    md.append("## Known limitations\n")
+    md.append("- Verified non-congregate status from `MealServiceType` is available only where public TX Open Data includes that field, currently limited to the 2022–2023 contact datasets. The NC_ prefix convention extends NC detection to other years but is still a TDA naming convention, not an exhaustive list. **Unknown does not mean congregate.**\n")
     md.append("- Reported meals are not unique children served.\n")
     md.append("- Rural/Urban indicator (`rural_urban_status`) is available only from `8ih4-zp65`, so coverage is limited to ~1,965 SFSP 2022–2023 sites.\n")
     md.append("- 24ie-9cft (All Summer Sites 2023) is cross-listed: it serves both as the 2023 summer contact source and as one of the three NC sources. It is fetched once and saved into both category folders.\n")
@@ -912,8 +1063,12 @@ def main() -> None:
     nc = build_nc_enrichment_from_raw()
     print(f"  NC deduped: {len(nc):,} unique (ce_id, site_id)")
 
+    print("\nAggregating NC_ prefix flag across canonical sources ...")
+    nc_name_agg = aggregate_nc_from_name(meals, summer_contacts, snp_contacts)
+    print(f"  NC_-prefix sites (any year): {len(nc_name_agg):,}")
+
     print("\nBuilding site lookup ...")
-    site_lookup = build_site_lookup(summer_contacts_d, snp_contacts_d, meals_site, snp_reimb, nc)
+    site_lookup = build_site_lookup(summer_contacts_d, snp_contacts_d, meals_site, snp_reimb, nc, nc_name_agg)
     print(f"  site_lookup_master_v2: {len(site_lookup):,} rows")
     site_lookup.to_csv(OUT_SITE, index=False)
     print(f"  wrote {OUT_SITE}")

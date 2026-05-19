@@ -108,6 +108,26 @@ def normalize_text(value):
     return s if s and s.lower() not in {"nan", "none", "<na>"} else pd.NA
 
 
+def is_nc_prefix(value) -> bool:
+    """True if the value (a site name) begins with the case-insensitive
+    prefix `NC_`. Specifically matches `NC_` with the underscore so a name
+    like `NCI CHARTER SCHOOL` is NOT flagged."""
+    if pd.isna(value):
+        return False
+    return str(value).upper().startswith("NC_")
+
+
+def strip_nc_prefix(value):
+    """Return the site name with a leading `NC_` (case-insensitive)
+    removed. Original casing of the remainder is preserved."""
+    if pd.isna(value):
+        return value
+    s = str(value)
+    if s.upper().startswith("NC_"):
+        return s[3:].strip()
+    return value
+
+
 def classify_program_value(value) -> str:
     v = (str(value or "").upper()).replace("_", " ")
     if "SSO" in v or "SEAMLESS" in v:
@@ -174,6 +194,8 @@ def standardize_meal_counts_record(entry: dict, df: pd.DataFrame) -> pd.DataFram
     out["ce_name"] = d[ce_name_col].apply(normalize_text) if ce_name_col else pd.NA
     out["site_id"] = standardize_id(d[site_id_col]) if site_id_col else pd.NA
     out["site_name"] = d[site_name_col].apply(normalize_text) if site_name_col else pd.NA
+    out["nc_from_site_name"] = out["site_name"].apply(is_nc_prefix)
+    out["site_name_base"] = out["site_name"].apply(strip_nc_prefix)
     out["ce_county"] = d[cecounty_col].apply(normalize_text) if cecounty_col else pd.NA
     out["site_county"] = d[sitecounty_col].apply(normalize_text) if sitecounty_col else pd.NA
     out["region"] = d[region_col] if region_col else pd.NA
@@ -402,6 +424,8 @@ def standardize_summer_contact_record(entry: dict, df: pd.DataFrame) -> pd.DataF
     out["ce_name"] = d["cename"].apply(normalize_text) if "cename" in d.columns else pd.NA
     out["site_id"] = standardize_id(d["siteid"]) if "siteid" in d.columns else pd.NA
     out["site_name"] = d["sitename"].apply(normalize_text) if "sitename" in d.columns else pd.NA
+    out["nc_from_site_name"] = out["site_name"].apply(is_nc_prefix)
+    out["site_name_base"] = out["site_name"].apply(strip_nc_prefix)
 
     out["site_type"] = d["sitetype"].apply(normalize_text) if "sitetype" in d.columns else pd.NA
     out["type_of_agency"] = d["typeofagency"].apply(normalize_text) if "typeofagency" in d.columns else pd.NA
@@ -520,6 +544,8 @@ def standardize_snp_contact_record(entry: dict, df: pd.DataFrame) -> pd.DataFram
     out["ce_name"] = d["cename"].apply(normalize_text) if "cename" in d.columns else pd.NA
     out["site_id"] = standardize_id(d["siteid"]) if "siteid" in d.columns else pd.NA
     out["site_name"] = d["sitename"].apply(normalize_text) if "sitename" in d.columns else pd.NA
+    out["nc_from_site_name"] = out["site_name"].apply(is_nc_prefix)
+    out["site_name_base"] = out["site_name"].apply(strip_nc_prefix)
 
     addr_map = {
         "ce_street_address_line_1": "cestreetaddressline1",

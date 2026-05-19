@@ -132,6 +132,11 @@ def load_data(path: str = LOOKUP_CSV) -> pd.DataFrame:
         df["total_reported_meals"] = pd.to_numeric(df["total_reported_meals"], errors="coerce")
     if "latest_program_year" in df.columns:
         df["latest_program_year"] = pd.to_numeric(df["latest_program_year"], errors="coerce").astype("Int64")
+    if "nc_flag_from_name" in df.columns:
+        df["nc_flag_from_name"] = (
+            df["nc_flag_from_name"].astype(str).str.strip().str.lower()
+            .isin({"true", "1", "yes"})
+        )
     return df
 
 
@@ -193,6 +198,12 @@ def apply_filters(df: pd.DataFrame, selections: dict) -> pd.DataFrame:
     if selections.get("source_ids") and "source_dataset_ids" in out.columns:
         out = out[value_contains_any(out["source_dataset_ids"], selections["source_ids"])]
 
+    if selections.get("only_nc_prefix") and "nc_flag_from_name" in out.columns:
+        flag = out["nc_flag_from_name"]
+        if flag.dtype != bool:
+            flag = flag.astype(str).str.strip().str.lower().isin({"true", "1", "yes"})
+        out = out[flag.fillna(False)]
+
     if selections.get("only_with_meals") and "total_reported_meals" in out.columns:
         out = out[pd.to_numeric(out["total_reported_meals"], errors="coerce").fillna(0) > 0]
 
@@ -226,8 +237,8 @@ def render_metrics(df: pd.DataFrame) -> None:
     no_activity = flags.str.contains("no_reported_meal_activity").sum()
     cols2[2].metric("No reported meal activity", f"{no_activity:,}")
 
-    # Row 3: public-source NC enrichment counts (2022-2023 verified subset)
-    cols3 = st.columns(4)
+    # Row 3: public-source NC enrichment counts + NC-from-name signal
+    cols3 = st.columns(5)
     if "non_congregate_status" in df.columns:
         statuses = df["non_congregate_status"].fillna("Unknown").astype(str).str.strip()
         verified = int((statuses != "Unknown").sum())
@@ -240,18 +251,30 @@ def render_metrics(df: pd.DataFrame) -> None:
     cols3[0].metric("Verified NC source-matched", f"{verified:,}")
     cols3[1].metric("Confirmed non-congregate", f"{confirmed_nc:,}")
 
+    if "nc_flag_from_name" in df.columns:
+        nc_name_flag = df["nc_flag_from_name"]
+        if nc_name_flag.dtype != bool:
+            nc_name_flag = nc_name_flag.astype(str).str.strip().str.lower().isin({"true", "1", "yes"})
+        nc_from_name_count = int(nc_name_flag.fillna(False).sum())
+    else:
+        nc_from_name_count = 0
+    cols3[2].metric("NC from site name", f"{nc_from_name_count:,}")
+
     if "rural_urban_status" in df.columns:
         ru = df["rural_urban_status"].fillna("").astype(str).str.strip()
         rural = int((ru == "Rural").sum())
     else:
         rural = 0
-    cols3[2].metric("Rural records", f"{rural:,}")
-    cols3[3].metric("Unknown NC records", f"{unknown_nc:,}")
+    cols3[3].metric("Rural records", f"{rural:,}")
+    cols3[4].metric("Unknown NC records", f"{unknown_nc:,}")
 
     st.caption(
-        "Verified NC counts reflect only the public 2022–2023 meal service type "
-        "sources. Unknown records may include sites from other years where TDA "
-        "did not publish mealservicetype."
+        "**Verified NC** counts come from the public 2022–2023 MealServiceType "
+        "field. **NC from site name** counts sites whose name starts with `NC_` "
+        "in any year (TDA naming convention; broader-year coverage than "
+        "MealServiceType). **Unknown** records may include sites from other "
+        "years where TDA did not publish a non-congregate indicator. "
+        "Unknown does not mean congregate."
     )
 
 
@@ -388,6 +411,9 @@ def render_selected_site_panel(df: pd.DataFrame) -> None:
         ("Years Active", "years_active"),
         ("Non-Congregate Status", "non_congregate_status"),
         ("Non-Congregate Source", "non_congregate_source"),
+        ("NC from Site Name", "nc_flag_from_name"),
+        ("NC_ Prefix Years", "nc_name_years"),
+        ("Site Name (base)", "site_name_base"),
         ("Rural / Urban Status", "rural_urban_status"),
         ("Rural / Urban Source", "rural_urban_source"),
         ("Data Quality Flags", "data_quality_flags"),
@@ -512,6 +538,11 @@ def main() -> None:
     else:
         selected_source_ids = []
 
+    only_nc_prefix = st.sidebar.checkbox(
+        "Only NC_ prefixed sites",
+        value=False,
+        help="Show only sites whose name starts with NC_ in any year (TDA naming convention for non-congregate variants)."
+    )
     only_with_meals = st.sidebar.checkbox("Only sites with reported meal activity", value=False)
     only_with_latlon = st.sidebar.checkbox("Only sites with latitude/longitude", value=False)
 
@@ -533,6 +564,7 @@ def main() -> None:
         "meal_service_types": selected_mst,
         "years_verified": selected_years_verified,
         "source_ids": selected_source_ids,
+        "only_nc_prefix": only_nc_prefix,
         "only_with_meals": only_with_meals,
         "only_with_latlon": only_with_latlon,
     })

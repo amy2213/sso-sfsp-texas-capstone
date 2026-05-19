@@ -39,13 +39,33 @@ charts, tables, SQL queries, and the Streamlit app use the phrase
 "reported meals" to make this clear. Do not interpret any output of
 this pipeline as a count of children fed.
 
-**Non-congregate status is verified for one program year only.** TDA
-only published the `MealServiceType` field for **program year 2022–2023**
-(the COVID-era non-congregate flexibility window). Earlier and later
-contact datasets do not carry the field at all. Every site outside that
-window stays marked **Unknown**, and `Unknown` explicitly does *not*
-mean the site was congregate — it means no public-source field exists
-for that site/year.
+**Non-congregate status uses two detection methods.** The pipeline
+identifies a site as non-congregate via either of:
+
+1. **`MealServiceType` field** — TDA published this only for
+   **program year 2022–2023** (the COVID-era non-congregate
+   flexibility window) in the three contact datasets `8ih4-zp65`,
+   `24ie-9cft`, `82b8-iuvu`. Earlier and later contact datasets do
+   not carry the field at all. When present it gives a specific
+   modality: *Congregate*, *Non-Congregate - Grab-and-go at central
+   site*, *Non-Congregate - Mobile route*, or *Non-Congregate - Home
+   delivery*.
+2. **`NC_` site-name prefix** — TDA marks non-congregate site
+   variants by prepending `NC_` to the site name (e.g., `NC_ACTON EL`
+   is the non-congregate version of `ACTON EL` at the same CE). This
+   convention spans summer meal counts, summer contacts, and SNP
+   contacts and works across all years (it ramped up post-COVID:
+   0 in 2020 → 147 in 2025 summer contacts, 279 in 2025 meal counts).
+   The check matches `NC_` with the underscore specifically, so a
+   name like `NCI CHARTER SCHOOL` is *not* flagged.
+
+Where both signals exist, MealServiceType wins (most specific). Where
+only the name prefix exists, the status is `Non-Congregate (from
+site name)`. Where neither exists, the site stays marked **Unknown**.
+`Unknown` explicitly does *not* mean the site was congregate — it
+means no public-source signal identifies it as non-congregate. The
+`non_congregate_source` column shows which method(s) identified each
+site.
 
 **2020–2022 SSO scale reflects COVID-era waivers, not normal summer
 operations.** Under USDA's pandemic waivers, SSO could operate

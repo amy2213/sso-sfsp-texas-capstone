@@ -1,5 +1,5 @@
 # TDA 5-Year Pipeline Validation Report
-_Generated 2026-05-18T18:45:28_
+_Generated 2026-05-18T21:49:44_
 ## Wording
 This pipeline reports **reported meals served**, not unique children served. Verified non-congregate status is available only where public TX Open Data includes meal service type, currently limited to the 2022–2023 contact datasets. **Unknown does not mean congregate.**
 
@@ -81,17 +81,34 @@ See `data/audit/tda_5yr_ingestion_audit.csv` for the per-dataset row.
 ## Non-congregate status distribution (search master)
 | Status | Count |
 |---|---:|
-| Unknown | 20,183 |
-| Congregate | 5,230 |
+| Unknown | 20,070 |
+| Congregate | 5,183 |
+| Non-Congregate (from site name) | 160 |
 | Non-Congregate - Grab-and-go at central site | 39 |
 | Non-Congregate - Mobile route – Meals are picked up by children/parents directly from the vehicle. | 5 |
 | Non-Congregate - Home delivery | 2 |
 
-Total sites with verified NC source match: **5,276**
-Total confirmed non-congregate sites: **46**
+Total sites with verified NC source match: **5,389**
+Total confirmed non-congregate sites: **206**
+
+## NC_ prefix detection (site_name)
+Distinct (ce_id, site_id) keys with NC_ prefix in ANY year: **191**
+
+| Year | summer_meal_counts | summer_contacts | snp_contacts |
+|---|---:|---:|---:|
+| 2023 | 37 | 16 | 0 |
+| 2024 | 250 | 120 | 43 |
+| 2025 | 279 | 147 | 62 |
+
+### Overlap with MealServiceType-derived NC
+| Detection | Sites |
+|---|---:|
+| MealServiceType non-congregate AND NC_ prefix (both signals agree) | 31 |
+| MealServiceType non-congregate only | 15 |
+| NC_ prefix only | 160 |
 
 ## Known limitations
-- Verified non-congregate status is available only where public TX Open Data includes meal service type, currently limited to the 2022–2023 contact datasets. Unknown does not mean congregate.
+- Verified non-congregate status from `MealServiceType` is available only where public TX Open Data includes that field, currently limited to the 2022–2023 contact datasets. The NC_ prefix convention extends NC detection to other years but is still a TDA naming convention, not an exhaustive list. **Unknown does not mean congregate.**
 - Reported meals are not unique children served.
 - Rural/Urban indicator (`rural_urban_status`) is available only from `8ih4-zp65`, so coverage is limited to ~1,965 SFSP 2022–2023 sites.
 - 24ie-9cft (All Summer Sites 2023) is cross-listed: it serves both as the 2023 summer contact source and as one of the three NC sources. It is fetched once and saved into both category folders.
