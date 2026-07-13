@@ -538,6 +538,7 @@ def standardize_snp_contact_record(entry: dict, df: pd.DataFrame) -> pd.DataFram
     out["source_dataset_id"] = entry["dataset_id"]
     out["source_label"] = entry["label"]
     out["school_year"] = entry["period"]
+    out["program_year"] = entry["period"]
     out["canonical_year"] = entry["canonical_year"]
 
     out["ce_id"] = standardize_id(d["ceid"]) if "ceid" in d.columns else pd.NA
@@ -652,6 +653,7 @@ def standardize_snp_reimbursement_record(entry: dict, df: pd.DataFrame) -> pd.Da
     out["source_dataset_id"] = entry["dataset_id"]
     out["source_label"] = entry["label"]
     out["school_year"] = entry["period"]
+    out["program_year"] = entry["period"]
     out["canonical_year"] = entry["canonical_year"]
 
     out["ce_id"] = standardize_id(d["ceid"]) if "ceid" in d.columns else pd.NA
